@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
+// Route of home
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route of posts
+Route::resource('posts', 'PostController')->parameters([
+    'posts' => 'id'
+])->names([
+    'index'     => 'posts.index',
+    'create'    => 'post.create',
+    'store'     => 'post.store',
+    'show'      => 'post.show',
+    'edit'      => 'post.edit',
+    'update'    => 'post.update',
+    'destroy'   => 'post.destroy',
+]);
