@@ -21,15 +21,18 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route of posts
-Route::resource('posts', 'PostController')->parameters([
-    'posts' => 'id'
-])->names([
-    'index'     => 'posts.index',
-    'create'    => 'post.create',
-    'store'     => 'post.store',
-    'show'      => 'post.show',
-    'edit'      => 'post.edit',
-    'update'    => 'post.update',
-    'destroy'   => 'post.destroy',
-]);
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
+    // Route of posts
+    Route::resource('posts', 'PostController')->parameters([
+        'posts' => 'id'
+    ])->names([
+        'index'     => 'posts.index',
+        'create'    => 'post.create',
+        'store'     => 'post.store',
+        'show'      => 'post.show',
+        'edit'      => 'post.edit',
+        'update'    => 'post.update',
+        'destroy'   => 'post.destroy',
+    ]);
+});
+
