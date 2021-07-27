@@ -22,6 +22,21 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
+
+    // Route of categories
+    Route::resource('categories', 'CategoryController')->except([
+        'show'
+    ])->parameters([
+        'categories' => 'id'
+    ])->names([
+        'index'     => 'categories.index',
+        'create'    => 'category.create',
+        'store'     => 'category.store',
+        'edit'      => 'category.edit',
+        'update'    => 'category.update',
+        'destroy'   => 'category.destroy',
+    ]);
+
     // Route of posts
     Route::resource('posts', 'PostController')->parameters([
         'posts' => 'id'
