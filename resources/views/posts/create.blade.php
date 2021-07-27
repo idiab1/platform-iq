@@ -10,7 +10,7 @@
     <div class="col-md-8">
         <div class="card form-post">
             <div class="card-header">{{ __('Create Post') }}</div>
-            <form action="{{route('post.create')}}" method="POST">
+            <form action="{{route('post.store')}}" method="POST">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -22,14 +22,12 @@
                         <textarea class="form-control" name="content" id="content" cols="30" rows="10" placeholder="{{__("Type Content of post")}}" required></textarea>
                     </div>
 
-
-
                     <div class="form-group">
                         <label for="image">{{__('Image')}}</label>
                         <div class="input-group mb-3">
                             <div class="custom-file">
-                                <input class="custom-file-input" type="file" id="" aria-describedby="">
-                                <label class="custom-file-label" for="">Choose file</label>
+                                <input class="custom-file-input" type="file" name="image" id="imageFile" aria-describedby="imageFile">
+                                <label class="custom-file-label" for="imageFile">Choose file</label>
                             </div>
                         </div>
                     </div>
