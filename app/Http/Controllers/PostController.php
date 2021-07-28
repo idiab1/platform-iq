@@ -14,7 +14,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -35,7 +34,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $this->validate($request, [
+            'title' => 'required|string',
+            'content' => 'required',
+            'image' => 'required|image',
+        ]);
     }
 
     /**
