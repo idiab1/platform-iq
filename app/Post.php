@@ -8,8 +8,18 @@ class Post extends Model
 {
 
     protected $fillable = [
-        'title', 'content', 'photo', 'category_id'
+        'title', 'content', 'image', 'category_id'
     ];
+
+    protected $appends = [
+        'image_path'
+    ];
+
+    // Get image path attribute
+    public function getImagePathAttribute()
+    {
+        return asset('uploads/posts/' . $this->image);
+    }
 
     /**
      * Get the category that owns the Post
