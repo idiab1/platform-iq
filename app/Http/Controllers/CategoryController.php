@@ -49,16 +49,6 @@ class CategoryController extends Controller
         return redirect()->back()->with('success', 'Category of created');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -68,7 +58,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -80,7 +71,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate on all data coming from user
+        $this->validate($request, [
+            'name' => 'required|string',
+        ]);
+
+        // Create new category
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('categories.index')->with('success', 'Category of updated');
     }
 
     /**
