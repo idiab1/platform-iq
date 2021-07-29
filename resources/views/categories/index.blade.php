@@ -12,7 +12,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">{{__('First')}}</th>
+                    <th scope="col">{{__('Name')}}</th>
                     <th scope="col">{{__('Action')}}</th>
                 </tr>
             </thead>
