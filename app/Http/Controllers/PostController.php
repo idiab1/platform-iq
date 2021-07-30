@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PostController extends Controller
 {
@@ -23,7 +25,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create', compact('categories'));
     }
 
     /**
@@ -34,12 +37,30 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $this->validate($request, [
             'title' => 'required|string',
             'content' => 'required',
-            'image' => 'required|image',
+            'image' => 'required',
+            'category_id' => 'required',
         ]);
+        $request_data = $request->all();
+
+        /* Check image exist in request then kame image
+            with resize 300 and save aspect ratio
+            then save on uploads folder
+        */
+        if ($request->image) {
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/posts/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+        }
+
+        // Create new post from post model
+        post::create($request_data);
+
+        // Return to home page of posts with success session
+        return redirect()->route('posts.index')->with('success', 'Post of created');
     }
 
     /**
