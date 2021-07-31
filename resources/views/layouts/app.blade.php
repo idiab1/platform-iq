@@ -14,10 +14,16 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome/css/fontawsome.all.css')}}">
+
+    {{-- Other styles --}}
+    @yield('styles')
 </head>
 <body>
     <div id="app">
@@ -33,5 +39,8 @@
         <!---- End of Main Content --->
 
     </div>
+
+    {{-- Other scripts --}}
+    @yield('scripts')
 </body>
 </html>
