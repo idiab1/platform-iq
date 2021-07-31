@@ -3,13 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\softDeletes;
 
 class Post extends Model
 {
 
+    use softDeletes;
+
     protected $fillable = [
-        'title', 'content', 'image', 'category_id'
+        'title', 'content', 'image', 'category_id', 'slug'
     ];
+
+    protected $dates = ['deleted_at'];
 
     protected $appends = [
         'image_path'
