@@ -6,6 +6,9 @@ use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
 
 class PostController extends Controller
 {
@@ -16,6 +19,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::all();
+        return view("posts.index", compact("posts"));
     }
 
     /**
@@ -40,10 +45,11 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required|string',
             'content' => 'required',
-            'image' => 'required',
+            'image' => 'image',
             'category_id' => 'required',
         ]);
         $request_data = $request->all();
+        // dd($request_data);
 
         /* Check image exist in request then kame image
             with resize 300 and save aspect ratio
@@ -57,7 +63,15 @@ class PostController extends Controller
         }
 
         // Create new post from post model
-        post::create($request_data);
+        // post::create($request_data);
+        post::create([
+            "title" => $request->title,
+            "content" => $request->content,
+            "category_id" => $request->category_id,
+            "slug" => Str::slug($request->title),
+            "image" => $request->image->hashName(),
+        ]);
+
 
         // Return to home page of posts with success session
         return redirect()->route('posts.index')->with('success', 'Post of created');
@@ -103,8 +117,35 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    // Soft delete
+    public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->back();
+    }
+
+    // Return only posts trashed
+    public function trashed()
+    {
+        $posts = Post::onlyTrashed()->get();
+        return view('posts.trashed', compact('posts'));
+    }
+
+    public function restore($id)
+    {
+        $post = Post::withTrashed()->where("id", $id)->first();
+        $post->restore();
+        return redirect()->back();
+    }
+
+    public function hdelete($id)
+    {
+        $post = Post::withTrashed()->where("id", $id)->first();
+        if ($post->image) {
+            Storage::disk("public_uploads")->delete('/posts/' . $post->image);
+        }
+        $post->forceDelete();
+        return redirect()->back();
     }
 }
