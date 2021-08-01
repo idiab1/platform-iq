@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
 
     // Route of categories
     Route::resource('categories', 'CategoryController')->except([
@@ -47,7 +47,12 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
         'show'      => 'post.show',
         'edit'      => 'post.edit',
         'update'    => 'post.update',
-        'destroy'   => 'post.destroy',
+        'destroy'   => 'post.archive',
     ]);
+    // Route of posts trashed
+    Route::get('/posts_trashed', "PostController@trashed")->name('posts.trashed');
+    // Route of posts hard delete
+    Route::delete('posts/hdeleted/{id}', "PostController@hdelete")->name('post.hdelete');
+    // Route of posts restore
+    Route::get('posts/restore/{id}', "PostController@restore")->name('post.restore');
 });
-
