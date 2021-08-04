@@ -55,4 +55,18 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
     Route::delete('posts/hdeleted/{id}', "PostController@hdelete")->name('post.hdelete');
     // Route of posts restore
     Route::get('posts/restore/{id}', "PostController@restore")->name('post.restore');
+
+    // Route of tags
+    Route::resource('tags', 'TagController')->except([
+        'show'
+    ])->parameters([
+        'tags' => 'id'
+    ])->names([
+        'tags'      => 'tags.index',
+        'create'    => 'tag.create',
+        'store'     => 'tag.store',
+        'edit'      => 'tag.edit',
+        'update'    => 'tag.update',
+        'destroy'   => 'tag.destroy',
+    ]);
 });
