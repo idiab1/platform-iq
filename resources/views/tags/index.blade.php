@@ -25,7 +25,7 @@
                     @foreach ($tags as $tag)
                         <tr>
                             <th scope="row">{{$id++}}</th>
-                            <td>{{$tag->name}}</td>
+                            <td>{{$tag->tag}}</td>
                             <td>
                                 <a class="btn btn-success" href="{{route('tag.edit', ['id' => $tag->id])}}">
                                     <i class="fas fa-edit"></i> {{__('Edit')}}
