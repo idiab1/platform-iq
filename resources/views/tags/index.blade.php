@@ -2,7 +2,7 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('List of all tags')}}
+    {{__('List all of tags')}}
 @endsection
 
 @section('content')
