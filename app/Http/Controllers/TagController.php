@@ -36,7 +36,16 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate all data coming form users
+        $this->validate($request, [
+            'tag' => 'required|string',
+        ]);
+
+        // Create new tag object form tag model
+        $tag = new Tag();
+        $tag->tag = $request->tag;
+        $tag->save();
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +90,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::find($id);
+        $tag->delete();
+        return redirect()->back();
     }
 }
