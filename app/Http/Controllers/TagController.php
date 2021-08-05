@@ -49,17 +49,6 @@ class TagController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -67,7 +56,8 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tag = Tag::find($id);
+        return view('tags.edit', compact('tag'));
     }
 
     /**
@@ -79,7 +69,16 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate all data coming form users
+        $this->validate($request, [
+            'tag' => 'required|string',
+        ]);
+
+        // Create new tag object form tag model
+        $tag = Tag::find($id);
+        $tag->tag = $request->tag;
+        $tag->save();
+        return redirect()->back();
     }
 
     /**
