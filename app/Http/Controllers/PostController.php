@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Storage;
@@ -31,7 +32,16 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('posts.create', compact('categories'));
+        $tags = Tag::all();
+
+        if ($categories->count() == 0) {
+            return redirect()->route('category.create');
+        }
+        if ($tags->count() == 0) {
+            return redirect()->route('tag.create');
+        }
+
+        return view('posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -42,11 +52,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate on all data coming form users
         $this->validate($request, [
             'title' => 'required|string',
             'content' => 'required',
             'image' => 'image',
             'category_id' => 'required',
+            'tags' => 'required'
         ]);
         $request_data = $request->all();
         // dd($request_data);
@@ -64,7 +76,7 @@ class PostController extends Controller
 
         // Create new post from post model
         // post::create($request_data);
-        post::create([
+        $post = post::create([
             "title" => $request->title,
             "content" => $request->content,
             "category_id" => $request->category_id,
@@ -72,6 +84,7 @@ class PostController extends Controller
             "image" => $request->image->hashName(),
         ]);
 
+        $post->tags()->attach($request->tags);
 
         // Return to home page of posts with success session
         return redirect()->route('posts.index')->with('success', 'Post of created');
@@ -94,9 +107,12 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('posts.edit', compact('post', 'categories', 'tags'));
     }
 
     /**
@@ -106,9 +122,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        // $post = Post::find($id);
+        // dd($request);
     }
 
     /**
