@@ -124,8 +124,62 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $post = Post::find($id);
         // dd($request);
+        // Validate on all data coming form users
+        $this->validate($request, [
+            'title' => 'required|string',
+            'content' => 'required',
+            'image' => 'image',
+            'category_id' => 'required',
+            'tags' => 'required'
+        ]);
+        $request_data = $request->all();
+
+        // Select post by id
+        $post = Post::find($id);
+
+
+        /* Check image exist in request then kame image
+            with resize 300 and save aspect ratio
+            then save on uploads folder
+        */
+        // if ($request->image) {
+        //     Image::make($request->image)->resize(300, null, function ($constraint) {
+        //         $constraint->aspectRatio();
+        //     })->save(public_path('uploads/posts/' . $request->image->hashName()));
+        //     $request_data['image'] = $request->image->hashName();
+        // }
+
+        if ($request->hasFile('image')) {
+            // Delete image from uploads folder
+            if ($post->image) {
+                Storage::disk('public_uploads')->delete('/posts/' . $post->image);
+            }
+            // then add new image to uploads folder
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/posts/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+            // Edit on database table
+            $post->update([
+                "image" => $request->image->hashName(),
+            ]);
+        }
+
+
+        // Create new post from post model
+        $post->update([
+            "title" => $request->title,
+            "content" => $request->content,
+            "category_id" => $request->category_id,
+            "slug" => Str::slug($request->title),
+        ]);
+
+
+        $post->tags()->sync($request->tags);
+
+        // Return to home page of posts with success session
+        return redirect()->route('posts.index')->with('success', 'Post of created');
     }
 
     /**
