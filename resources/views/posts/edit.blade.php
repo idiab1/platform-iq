@@ -10,7 +10,7 @@
     <div class="col-md-8">
         <div class="card form-post">
             <div class="card-header">{{__('Edit')}} {{$post->title . "'s"}}</div>
-            <form action="{{route('post.update', ['id', $post->id])}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('post.update', ['id' => $post->id])}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
