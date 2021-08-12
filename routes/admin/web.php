@@ -25,7 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
     Route::resource('users', 'UserController')->except([
         'show'
     ])->parameters([
-        'users' => 'id'
+        'users' => 'id',
     ])->names([
         'index'     => 'users.index',
         'create'    => 'user.create',
@@ -34,6 +34,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
         'update'    => 'user.update',
         'destroy'   => 'user.destroy',
     ]);
+    Route::put('/users/{id}/makeAdmin', "UserController@makeAdmin")->name('make.admin');
+    Route::put('/users/{id}/removeAdmin', "UserController@removeAdmin")->name('remove.admin');
+
 
     // -> Route for setting
     Route::resource('setting', "SettingController")->only([
