@@ -51,19 +51,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
         'destroy'   => 'category.destroy',
     ]);
 
-    // // Route of tags
-    // Route::resource('tags', 'TagController')->except([
-    //     'show'
-    // ])->parameters([
-    //     'tags' => 'id'
-    // ])->names([
-    //     'tags'      => 'tags.index',
-    //     'create'    => 'tag.create',
-    //     'store'     => 'tag.store',
-    //     'edit'      => 'tag.edit',
-    //     'update'    => 'tag.update',
-    //     'destroy'   => 'tag.destroy',
-    // ]);
+    // Route of tags
+    Route::resource('tags', 'TagController')->except([
+        'show'
+    ])->parameters([
+        'tags' => 'id'
+    ])->names([
+        'tags'      => 'tags.index',
+        'create'    => 'tag.create',
+        'store'     => 'tag.store',
+        'edit'      => 'tag.edit',
+        'update'    => 'tag.update',
+        'destroy'   => 'tag.destroy',
+    ]);
 
     // -> Route for setting
     Route::resource('setting', "SettingController")->only([
