@@ -87,7 +87,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('categories.index')}}" class="nav-link">
+                    <a href="{{route('tags.index')}}" class="nav-link">
                         <i class="fas fa-tags nav-icon"></i>
                         <p>Tags</p>
                     </a>
