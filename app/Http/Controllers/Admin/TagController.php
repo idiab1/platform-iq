@@ -46,7 +46,7 @@ class TagController extends Controller
         $tag = new Tag();
         $tag->tag = $request->tag;
         $tag->save();
-        return redirect()->back();
+        return redirect()->route('tas.index');
     }
 
     /**
@@ -79,7 +79,7 @@ class TagController extends Controller
         $tag = Tag::find($id);
         $tag->tag = $request->tag;
         $tag->save();
-        return redirect()->back();
+        return redirect()->route('tas.index');
     }
 
     /**
