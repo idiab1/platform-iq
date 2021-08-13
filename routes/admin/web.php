@@ -37,6 +37,33 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
     Route::put('/users/{id}/makeAdmin', "UserController@makeAdmin")->name('make.admin');
     Route::put('/users/{id}/removeAdmin', "UserController@removeAdmin")->name('remove.admin');
 
+    // Route of categories
+    Route::resource('categories', 'CategoryController')->except([
+        'show'
+    ])->parameters([
+        'categories' => 'id'
+    ])->names([
+        'index'     => 'categories.index',
+        'create'    => 'category.create',
+        'store'     => 'category.store',
+        'edit'      => 'category.edit',
+        'update'    => 'category.update',
+        'destroy'   => 'category.destroy',
+    ]);
+
+    // // Route of tags
+    // Route::resource('tags', 'TagController')->except([
+    //     'show'
+    // ])->parameters([
+    //     'tags' => 'id'
+    // ])->names([
+    //     'tags'      => 'tags.index',
+    //     'create'    => 'tag.create',
+    //     'store'     => 'tag.store',
+    //     'edit'      => 'tag.edit',
+    //     'update'    => 'tag.update',
+    //     'destroy'   => 'tag.destroy',
+    // ]);
 
     // -> Route for setting
     Route::resource('setting', "SettingController")->only([
@@ -48,19 +75,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
         'update'    => 'setting.update',
     ]);
 
-    // Route of categories
-    // Route::resource('categories', 'CategoryController')->except([
-    //     'show'
-    // ])->parameters([
-    //     'categories' => 'id'
-    // ])->names([
-    //     'index'     => 'categories.index',
-    //     'create'    => 'category.create',
-    //     'store'     => 'category.store',
-    //     'edit'      => 'category.edit',
-    //     'update'    => 'category.update',
-    //     'destroy'   => 'category.destroy',
-    // ]);
+
 
     // // Route of posts
     // Route::resource('posts', 'PostController')->parameters([
@@ -81,17 +96,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
     // // Route of posts restore
     // Route::get('posts/restore/{id}', "PostController@restore")->name('post.restore');
 
-    // // Route of tags
-    // Route::resource('tags', 'TagController')->except([
-    //     'show'
-    // ])->parameters([
-    //     'tags' => 'id'
-    // ])->names([
-    //     'tags'      => 'tags.index',
-    //     'create'    => 'tag.create',
-    //     'store'     => 'tag.store',
-    //     'edit'      => 'tag.edit',
-    //     'update'    => 'tag.update',
-    //     'destroy'   => 'tag.destroy',
-    // ]);
+
 });
