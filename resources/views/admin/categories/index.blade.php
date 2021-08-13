@@ -64,7 +64,7 @@
                                     <tr>
                                         <td>{{$id++}}</td>
                                         <td>{{$category->name}}</td>
-                                        
+
                                         <td>
                                             <a class="btn btn-success btn-sm btn-edit" href="{{route('category.edit', ['id' => $category->id])}}">
                                                 <i class="fas fa-edit"></i>
