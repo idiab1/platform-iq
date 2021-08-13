@@ -65,6 +65,26 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
         'destroy'   => 'tag.destroy',
     ]);
 
+    // Route of posts
+    Route::resource('posts', 'PostController')->parameters([
+        'posts' => 'id'
+    ])->names([
+        'index'     => 'posts.index',
+        'create'    => 'post.create',
+        'store'     => 'post.store',
+        'show'      => 'post.show',
+        'edit'      => 'post.edit',
+        'update'    => 'post.update',
+        'destroy'   => 'post.archive',
+    ]);
+    // Route of posts trashed
+    Route::get('/posts_trashed', "PostController@trashed")->name('posts.trashed');
+    // Route of posts hard delete
+    Route::delete('posts/hdeleted/{id}', "PostController@hdelete")->name('post.hdelete');
+    // Route of posts restore
+    Route::get('posts/restore/{id}', "PostController@restore")->name('post.restore');
+
+
     // -> Route for setting
     Route::resource('setting', "SettingController")->only([
         'edit', 'update',
@@ -74,27 +94,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
         'edit'      => 'setting.edit',
         'update'    => 'setting.update',
     ]);
-
-
-
-    // // Route of posts
-    // Route::resource('posts', 'PostController')->parameters([
-    //     'posts' => 'id'
-    // ])->names([
-    //     'index'     => 'posts.index',
-    //     'create'    => 'post.create',
-    //     'store'     => 'post.store',
-    //     'show'      => 'post.show',
-    //     'edit'      => 'post.edit',
-    //     'update'    => 'post.update',
-    //     'destroy'   => 'post.archive',
-    // ]);
-    // // Route of posts trashed
-    // Route::get('/posts_trashed', "PostController@trashed")->name('posts.trashed');
-    // // Route of posts hard delete
-    // Route::delete('posts/hdeleted/{id}', "PostController@hdelete")->name('post.hdelete');
-    // // Route of posts restore
-    // Route::get('posts/restore/{id}', "PostController@restore")->name('post.restore');
-
-
 });
