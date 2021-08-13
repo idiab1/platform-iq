@@ -80,6 +80,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('categories.index')}}" class="nav-link">
+                        <i class="fas fa-layers nav-icon"></i>
+                        <p>Categories</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('setting.edit', ['id' => $setting->id])}}" class="nav-link">
                         <i class="fas fa-cogs nav-icon"></i>
                         <p>Setting</p>
