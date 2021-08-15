@@ -67,11 +67,14 @@ class PostController extends Controller
             with resize 300 and save aspect ratio
             then save on uploads folder
         */
-        if ($request->image) {
+        if ($request->hasFile('image')) {
             Image::make($request->image)->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path('uploads/posts/' . $request->image->hashName()));
             $request_data['image'] = $request->image->hashName();
+            Post::create([
+                "image" => $request->image->hashName()
+            ]);
         }
 
         // Create new post from post model
@@ -81,7 +84,7 @@ class PostController extends Controller
             "content" => $request->content,
             "category_id" => $request->category_id,
             "slug" => Str::slug($request->title),
-            "image" => $request->image->hashName(),
+
         ]);
 
         $post->tags()->attach($request->tags);
