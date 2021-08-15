@@ -52,7 +52,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>{{__('Title')}}</th>
-                                <th>{{__('Content')}}</th>
                                 <th>{{__('Image')}}</th>
                                 <th>{{__('Edit')}}</th>
                                 <th>{{__('Archive')}}</th>
@@ -69,7 +68,7 @@
                                     <tr>
                                         <th scope="row">{{$id++}}</th>
                                         <td>{{$post->title}}</td>
-                                        <td>{{$post->content}}</td>
+
                                         <td>
                                             <img src="{{asset("uploads/posts/" . $post->image)}}" width="60px" alt="">
                                         </td>
@@ -106,7 +105,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>{{__('Title')}}</th>
-                                <th>{{__('Content')}}</th>
                                 <th>{{__('Image')}}</th>
                                 <th>{{__('Edit')}}</th>
                                 <th>{{__('Archive')}}</th>
