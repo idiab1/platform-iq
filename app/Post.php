@@ -9,7 +9,7 @@ class Post extends Model
 {
 
     use softDeletes;
-
+    protected $guarded = ['id'];
     protected $fillable = [
         'title', 'content', 'image', 'category_id', 'slug'
     ];
