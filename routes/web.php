@@ -19,4 +19,14 @@ Auth::routes();
 
 // Route of home
 Route::get('/', 'HomeController@index')->name('home');
-// Route::get('/home', 'HomeController@index')->name('home');
+
+// Route of Profiles
+Route::resource('profile', 'ProfileController')->only([
+    'index', 'edit', 'update'
+])->parameters([
+    'profile' => 'id'
+])->names([
+    'index'     => 'profile.index',
+    'edit'      => 'profile.edit',
+    'update'    => 'profile.update',
+]);
