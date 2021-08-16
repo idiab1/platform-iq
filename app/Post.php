@@ -11,7 +11,7 @@ class Post extends Model
     use softDeletes;
     protected $guarded = ['id'];
     protected $fillable = [
-        'title', 'content', 'image', 'category_id', 'slug'
+        'title', 'content', 'image', 'category_id', 'slug', 'user_id'
     ];
 
     protected $dates = ['deleted_at'];
@@ -36,6 +36,15 @@ class Post extends Model
         return $this->belongsTo('App\Category');
     }
 
+    /**
+     * Get the user that owns the Post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     /**
      * The tags that belong to the Post
