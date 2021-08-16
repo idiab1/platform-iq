@@ -52,6 +52,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->image);
         // Validate on all data coming form users
         $this->validate($request, [
             'title' => 'required|string',
@@ -67,27 +68,34 @@ class PostController extends Controller
             with resize 300 and save aspect ratio
             then save on uploads folder
         */
-        if ($request->hasFile('image')) {
+
+        if ($request->image) {
             Image::make($request->image)->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path('uploads/posts/' . $request->image->hashName()));
             $request_data['image'] = $request->image->hashName();
-            Post::create([
-                "image" => $request->image->hashName()
+
+            $post = Post::create([
+                "title" => $request->title,
+                "content" => $request->content,
+                "category_id" => $request->category_id,
+                "slug" => Str::slug($request->title),
+                'image' => $request->image->hashName(),
             ]);
+
+            $post->tags()->attach($request->tags);
+        } else {
+            $post = Post::create([
+                "title" => $request->title,
+                "content" => $request->content,
+                "category_id" => $request->category_id,
+                "slug" => Str::slug($request->title),
+            ]);
+
+            $post->tags()->attach($request->tags);
         }
 
-        // Create new post from post model
-        // post::create($request_data);
-        $post = post::create([
-            "title" => $request->title,
-            "content" => $request->content,
-            "category_id" => $request->category_id,
-            "slug" => Str::slug($request->title),
 
-        ]);
-
-        $post->tags()->attach($request->tags);
 
         // Return to home page of posts with success session
         return redirect()->route('posts.index')->with('success', 'Post of created');
@@ -146,12 +154,6 @@ class PostController extends Controller
             with resize 300 and save aspect ratio
             then save on uploads folder
         */
-        // if ($request->image) {
-        //     Image::make($request->image)->resize(300, null, function ($constraint) {
-        //         $constraint->aspectRatio();
-        //     })->save(public_path('uploads/posts/' . $request->image->hashName()));
-        //     $request_data['image'] = $request->image->hashName();
-        // }
 
         if ($request->hasFile('image')) {
             // Delete image from uploads folder
