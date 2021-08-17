@@ -26,11 +26,11 @@
                         </li>
                     @endif
                 @else
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link btn btn-primary btn-create-post" href="{{route('post.create')}}">
                             {{__('Create Post')}}
                         </a>
-                    </li> --}}
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <div class="image d-inline-block mr-2 ml-2">
