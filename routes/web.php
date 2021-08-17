@@ -26,8 +26,8 @@ Route::resource('posts', 'PostController')->only([
 ])->parameters([
     'posts' => 'id'
 ])->names([
-    'create'    => 'post.create',
-    'store'     => 'post.store',
+    'create'    => 'user.post.create',
+    'store'     => 'user.post.store',
 ]);
 
 // Route of Profiles

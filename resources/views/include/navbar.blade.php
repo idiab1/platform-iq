@@ -27,7 +27,7 @@
                     @endif
                 @else
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary btn-create-post" href="{{route('post.create')}}">
+                        <a class="nav-link btn btn-primary btn-create-post" href="{{route('user.post.create')}}">
                             {{__('Create Post')}}
                         </a>
                     </li>
