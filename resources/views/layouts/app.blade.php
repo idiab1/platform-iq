@@ -40,6 +40,8 @@
 
     </div>
 
+    <!-- jQuery -->
+    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     {{-- Other scripts --}}
     @yield('scripts')
 </body>
