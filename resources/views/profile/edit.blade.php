@@ -22,17 +22,17 @@
                     </div>
                     <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{route('profile.update', ['id' => $user->id])}}" method="POST">
+                        <form action="{{route('profile.update', ['id' => $user->id])}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
-                                <!-- Avatar -->
+                                <!-- image -->
                                 <div class="form-group">
                                     <div class="image-preview text-center">
-                                        <img class="preview img-fluid rounded-circle border border-dark" src="{{asset('uploads/users/' . $user->profile->avatar)}}" alt="user image" width="60">
+                                        <img class="preview img-fluid rounded-circle border border-dark" src="{{asset('uploads/users/' . $user->profile->image)}}" alt="user image" width="60">
                                     </div>
-                                    <label for="avatar">Avatar</label>
-                                    <input class="form-control" type="file" id="avatar" name="avatar">
+                                    <label for="image">Image</label>
+                                    <input class="form-control image" type="file" id="image" name="image">
                                 </div>
 
                                 <!-- Name -->
