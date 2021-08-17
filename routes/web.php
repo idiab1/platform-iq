@@ -20,6 +20,16 @@ Auth::routes();
 // Route of home
 Route::get('/', 'HomeController@index')->name('home');
 
+// Route of Posts
+Route::resource('posts', 'PostController')->only([
+    'create', 'store'
+])->parameters([
+    'posts' => 'id'
+])->names([
+    'create'    => 'post.create',
+    'store'     => 'post.store',
+]);
+
 // Route of Profiles
 Route::resource('profile', 'ProfileController')->only([
     'index', 'edit', 'update'
