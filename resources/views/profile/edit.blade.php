@@ -29,7 +29,9 @@
                                 <!-- image -->
                                 <div class="form-group">
                                     <div class="image-preview text-center">
-                                        <img class="preview img-fluid rounded-circle border border-dark" src="{{asset('uploads/users/' . $user->profile->image)}}" alt="user image" width="60">
+                                        <img class="preview rounded-circle border border-dark"
+                                        src="{{asset('uploads/users/' . $user->profile->image)}}"
+                                        alt="user image" width="60" height="60">
                                     </div>
                                     <label for="image">Image</label>
                                     <input class="form-control image" type="file" id="image" name="image">
