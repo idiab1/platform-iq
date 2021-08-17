@@ -6,6 +6,7 @@ use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -70,6 +71,10 @@ class ProfileController extends Controller
         $request_data = $request->all();
 
         if ($request->image && $request->image != null) {
+            // Delete image from uploads folder
+            if ($user->profile->image) {
+                Storage::disk('public_uploads')->delete('/users/' . $user->profile->image);
+            }
             Image::make($request->image)->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path('uploads/users/' . $request->image->hashName()));
@@ -87,7 +92,7 @@ class ProfileController extends Controller
                 ]);
             }
             $user->profile->update([
-                'image'    => $request->image->hashName(),
+                'image'     => $request->image->hashName(),
                 'facebook'  => $request->facebook,
                 'twitter'   => $request->twitter,
                 'github'    => $request->github,
