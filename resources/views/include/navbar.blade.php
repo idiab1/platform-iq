@@ -34,7 +34,9 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <div class="image d-inline-block mr-2 ml-2">
-                                <img class="preview img-fluid rounded-circle border border-dark" src="{{asset('uploads/users/' . Auth::user()->profile->image)}}" alt="user image" width="30">
+                                <img class="preview rounded-circle border border-dark"
+                                src="{{asset('uploads/users/' . Auth::user()->profile->image)}}"
+                                alt="user image" width="30" height="30">
                             </div>
                             {{ Auth::user()->name }}
                         </a>
