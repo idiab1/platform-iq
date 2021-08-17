@@ -22,7 +22,6 @@ class CreateProfilesTable extends Migration
             $table->string('github')->nullable();
             $table->text('about')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
