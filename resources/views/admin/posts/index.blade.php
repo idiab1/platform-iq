@@ -53,6 +53,7 @@
                                 <th>#</th>
                                 <th>{{__('Title')}}</th>
                                 <th>{{__('Image')}}</th>
+                                <th>{{__('By')}}</th>
                                 <th>{{__('Edit')}}</th>
                                 <th>{{__('Archive')}}</th>
                                 <th>{{__('Delete')}}</th>
@@ -67,11 +68,14 @@
                                 @foreach ($posts as $post)
                                     <tr>
                                         <th scope="row">{{$id++}}</th>
-                                        <td>{{$post->title}}</td>
+                                        <td>
+                                            <a href="{{route('post.show', ['id' => $post->slug])}}">{{$post->title}}</a>
+                                        </td>
 
                                         <td>
                                             <img src="{{asset("uploads/posts/" . $post->image)}}" width="60px" alt="">
                                         </td>
+                                        <td>{{$post->user->name}}</td>
                                         <td>
                                             <a class="btn btn-success" href="{{route('post.edit', ['id' => $post->id])}}">
                                                 <i class="fas fa-edit"></i> {{__('Edit')}}
@@ -106,6 +110,7 @@
                                 <th>#</th>
                                 <th>{{__('Title')}}</th>
                                 <th>{{__('Image')}}</th>
+                                <th>{{__('By')}}</th>
                                 <th>{{__('Edit')}}</th>
                                 <th>{{__('Archive')}}</th>
                                 <th>{{__('Delete')}}</th>
