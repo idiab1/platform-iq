@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Tag;
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -29,6 +34,54 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // Validate on all data coming form users
+        $this->validate($request, [
+            'title'         => 'required|string',
+            'content'       => 'required',
+            'image'         => 'image',
+            'category_id'   => 'required',
+            'tags'          => 'required'
+        ]);
+        $request_data = $request->all();
+        // dd($request_data);
+
+        /* Check image exist in request then kame image
+            with resize 300 and save aspect ratio
+            then save on uploads folder
+        */
+
+        if ($request->image) {
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/posts/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+
+            $post = Post::create([
+                "title"         => $request->title,
+                "user_id"       => Auth::user()->id,
+                "content"       => $request->content,
+                "category_id"   => $request->category_id,
+                "slug"          => Str::slug($request->title),
+                'image'         => $request->image->hashName(),
+            ]);
+
+            $post->tags()->attach($request->tags);
+        } else {
+            $post = Post::create([
+                "user_id" => Auth::user()->id,
+                "title" => $request->title,
+                "content" => $request->content,
+                "category_id" => $request->category_id,
+                "slug" => Str::slug($request->title),
+            ]);
+
+            $post->tags()->attach($request->tags);
+        }
+
+
+
+        // Return to home page of posts with success session
+        return redirect()->route('posts.index')->with('success', 'Post of created');
     }
 }
