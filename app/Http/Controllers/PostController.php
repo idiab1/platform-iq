@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +16,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        $tags   = Tag::all();
+        return view('posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -27,5 +31,4 @@ class PostController extends Controller
     {
         //
     }
-
 }
