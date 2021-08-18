@@ -7,6 +7,7 @@ use App\Post;
 use App\Category;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -52,14 +53,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->image);
+        // dd($request);
         // Validate on all data coming form users
         $this->validate($request, [
-            'title' => 'required|string',
-            'content' => 'required',
-            'image' => 'image',
-            'category_id' => 'required',
-            'tags' => 'required'
+            'title'         => 'required|string',
+            'content'       => 'required',
+            'image'         => 'image',
+            'category_id'   => 'required',
+            'tags'          => 'required'
         ]);
         $request_data = $request->all();
         // dd($request_data);
@@ -76,16 +77,18 @@ class PostController extends Controller
             $request_data['image'] = $request->image->hashName();
 
             $post = Post::create([
-                "title" => $request->title,
-                "content" => $request->content,
-                "category_id" => $request->category_id,
-                "slug" => Str::slug($request->title),
-                'image' => $request->image->hashName(),
+                "title"         => $request->title,
+                "user_id"       => Auth::user()->id,
+                "content"       => $request->content,
+                "category_id"   => $request->category_id,
+                "slug"          => Str::slug($request->title),
+                'image'         => $request->image->hashName(),
             ]);
 
             $post->tags()->attach($request->tags);
         } else {
             $post = Post::create([
+                "user_id" => Auth::user()->id,
                 "title" => $request->title,
                 "content" => $request->content,
                 "category_id" => $request->category_id,
@@ -138,11 +141,11 @@ class PostController extends Controller
         // dd($request);
         // Validate on all data coming form users
         $this->validate($request, [
-            'title' => 'required|string',
-            'content' => 'required',
-            'image' => 'image',
-            'category_id' => 'required',
-            'tags' => 'required'
+            'title'         => 'required|string',
+            'content'       => 'required',
+            'image'         => 'image',
+            'category_id'   => 'required',
+            'tags'          => 'required'
         ]);
         $request_data = $request->all();
 
@@ -174,10 +177,11 @@ class PostController extends Controller
 
         // Create new post from post model
         $post->update([
-            "title" => $request->title,
-            "content" => $request->content,
-            "category_id" => $request->category_id,
-            "slug" => Str::slug($request->title),
+            "user_id"       => Auth::user()->id,
+            "title"         => $request->title,
+            "content"       => $request->content,
+            "category_id"   => $request->category_id,
+            "slug"          => Str::slug($request->title),
         ]);
 
 
