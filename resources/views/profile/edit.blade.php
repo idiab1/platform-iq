@@ -30,7 +30,7 @@
                                 <div class="form-group">
                                     <div class="image-preview text-center">
                                         <img class="preview rounded-circle border border-dark"
-                                        src="{{asset('uploads/users/' . $user->profile->image)}}"
+                                        src="{{asset('uploads/users/' . Auth::user()->profile->image)}}"
                                         alt="user image" width="60" height="60">
                                     </div>
                                     <label for="image">Image</label>
