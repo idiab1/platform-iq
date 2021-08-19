@@ -24,17 +24,16 @@ class ProfileController extends Controller
 
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for creating a new resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function setting()
     {
         $user = Auth::user();
         if ($user->profile == null) {
             Profile::create([
-                'user_id'   => Auth::user()->id,
+                'user_id'   => $user->id,
                 'image'     => 'default.png',
                 'facebook'  => 'https://www.facebook.com',
                 'twitter'   => 'https://www.twitter.com',
@@ -42,7 +41,17 @@ class ProfileController extends Controller
                 'about'     => 'About here',
             ]);
         }
-        return view('profile.edit', compact('user'));
+        return view('profile.setting', compact('user'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
     }
 
     /**
