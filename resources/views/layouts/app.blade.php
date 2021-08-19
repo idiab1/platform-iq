@@ -28,7 +28,7 @@
 <body>
     <div id="app">
         <!---- Navbar --->
-        @include('include.navbar', ['setting' => \App\Setting::where('id', 1)->first(['web_name'])])
+        @include('include.navbar', ['setting' => \App\Setting::first(['web_name'])])
 
         <!---- Main Content --->
         <main class="main-content py-4">
