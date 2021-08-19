@@ -20,10 +20,10 @@
 <div class="wrapper">
 
     {{-- Navbar --}}
-    @include('admin.include.navbar', ['setting' => \App\Setting::where('id', 1)->first(['id'])])
+    @include('admin.include.navbar', ['setting' => \App\Setting::first(['id'])])
 
     {{-- Sidebar --}}
-    @include('admin.include.sidebar', ['setting' => \App\Setting::where('id', 1)->first(['id'])])
+    @include('admin.include.sidebar', ['setting' => \App\Setting::first(['id'])])
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -52,7 +52,7 @@
     <!-- /.content-wrapper -->
 
     {{-- Footer --}}
-    @include('admin.include.footer', ['setting' => \App\Setting::where('id', 1)->first(['web_name'])])
+    @include('admin.include.footer', ['setting' => \App\Setting::first(['web_name'])])
 
 
     <!-- Control Sidebar -->
