@@ -32,11 +32,11 @@ Route::resource('posts', 'PostController')->only([
 
 // Route of Profiles
 Route::resource('profile', 'ProfileController')->only([
-    'index', 'edit', 'update'
+    'index', 'update'
 ])->parameters([
     'profile' => 'id'
 ])->names([
     'index'     => 'profile.index',
-    'edit'      => 'profile.edit',
     'update'    => 'profile.update',
 ]);
+Route::get('profile/setting', 'ProfileController@setting')->name('profile.setting');
