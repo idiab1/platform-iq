@@ -45,7 +45,7 @@
                             <a class="dropdown-item" href="{{route('profile.index')}}">
                                 {{ __('Profile') }}
                             </a>
-                            <a class="dropdown-item" href="{{route('profile.edit', ['id' => Auth::user()->id])}}">
+                            <a class="dropdown-item" href="{{route('profile.setting')}}">
                                 {{ __('Setting') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
