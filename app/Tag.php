@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
 
-    protected $fillable = ['tag'];
+    protected $fillable = [
+        'tag', 'description'
+    ];
 
     /**
      * The posts that belong to the Tag
