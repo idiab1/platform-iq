@@ -10,7 +10,25 @@
 <div class="homepage">
     <div class="row">
         <div class="col-md-3">
-            <div class="sidebar-left">Sidebar left</div>
+            <div class="sidebar-left">Sidebar left
+                <h4>{{\App\Setting::first(['web_name'])->web_name}} Community</h4>
+                <div class="sidebar-links">
+                    <ul class="list-unstyled ">
+                        <li>
+                            <a href="{{route('home')}}">
+                                <i class="fas fa-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('user.tags.home')}}">
+                                <i class="fas fa-tags"></i>
+                                Tags
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="article-list">Articles
