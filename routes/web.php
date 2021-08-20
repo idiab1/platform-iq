@@ -20,6 +20,9 @@ Auth::routes();
 // Route of home
 Route::get('/', 'HomeController@index')->name('home');
 
+// Tags Route
+Route::get('/tags', 'TagController@index')->name('user.tags.home');
+
 // Route of Posts
 Route::resource('posts', 'PostController')->only([
     'create', 'store'
