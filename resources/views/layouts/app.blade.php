@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Font awesome -->
-    <link rel="stylesheet" href="{{asset('plugins/fontawesome/css/fontawsome.all.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/fontawsome.all.css')}}">
 
     {{-- Other styles --}}
     @yield('styles')
