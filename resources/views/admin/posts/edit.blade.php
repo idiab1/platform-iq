@@ -5,6 +5,19 @@
     Edit {{$post->title . "'s"}}
 @endsection
 
+{{-- Styles --}}
+@section('styles')
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
+    <style>
+        .select2-container .select2-selection--single {
+            height: auto;
+        }
+
+    </style>
+@endsection
+
 {{-- Page name --}}
 @section('page_name')
     Edit {{$post->title . "'s"}}
@@ -43,7 +56,7 @@
                                     <label for="content">{{__('Content')}}</label>
                                     <textarea class="form-control" name="content" id="content" cols="30" rows="10" placeholder="{{__("Type Content of post")}}" required>{{$post->content}}</textarea>
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="category">{{__('Category')}}</label>
                                     <select class="form-control" name="category_id" id="category" required>
                                         <option>{{__('All of category')}}</option>
@@ -51,24 +64,35 @@
                                             <option value="{{$category->id}}" {{$category->id == $post->category_id ? "selected" : ""}} >{{$category->name}}</option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
 
-                                <div class="form-check">
-                                    @foreach ($tags as $tag)
-                                        <input class="form-check-input" type="checkbox" name="tags[]"
-                                        value="{{$tag->id}}" id="tag"
-                                        @foreach ($post->tags as $tag_id)
-                                            @if ($tag->id == $tag_id->id)
-                                                checked
-                                            @endif
+                                <div class="form-group">
+                                    <label for="category">{{__('Category')}}</label>
+                                    <select class="form-control select2 searchable" name="category_id" id="category" required>
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}" {{$category->id == $post->category_id ? "selected" : ""}} >{{$category->name}}</option>
                                         @endforeach
-                                        >
-
-                                        <label class="form-check-label" for="tag">
-                                            {{$tag->tag}}
-                                        </label><br/>
-                                    @endforeach
+                                    </select>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="tag">{{__('Tags')}}</label>
+                                    <select class="form-control select2 searchable" name="tags[]" id="tag" multiple required>
+
+                                        @foreach ($tags as $tag)
+                                            <option value="{{$tag->id}}"
+                                                @foreach ($post->tags as $tag_id)
+                                                    {{$tag->id == $tag_id->id ? "selected" : ""}}
+                                                @endforeach
+                                                >
+                                                {{$tag->tag}}
+                                            </option>
+
+                                        @endforeach
+
+                                    </select>
+                                </div>
+
 
                                 <div class="form-group">
                                     <label for="image">{{__('Image')}}</label>
@@ -79,7 +103,6 @@
                                         </div>
                                     </div>
                                 </div>
-
 
                             </div>
                             <div class="card-footer">
@@ -95,4 +118,14 @@
 </div>
 @endsection
 
+@section('scripts')
+    <!-- Select 2 -->
+    <script src="{{asset('plugins/select2/js/select2.min.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.select2').select2();
 
+        });
+    </script>
+
+@endsection
