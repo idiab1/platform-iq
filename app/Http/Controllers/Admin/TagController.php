@@ -37,16 +37,17 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         // Validate all data coming form users
         $this->validate($request, [
             'tag' => 'required|string',
+            'tag_info' => 'nullable',
         ]);
 
         // Create new tag object form tag model
-        $tag = new Tag();
-        $tag->tag = $request->tag;
-        $tag->save();
+        Tag::create([
+            'tag' => $request->tag,
+            'tag_info' => $request->tag_info,
+        ]);
         return redirect()->route('tags.index');
     }
 
