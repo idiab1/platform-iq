@@ -35,8 +35,12 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="tag">{{__('Tag')}}</label>
-                                    <input class="form-control" type="text" id="tag" name="tag" placeholder="{{__("Type tag of tag")}}" required>
+                                    <label for="tag">{{__('Tag name')}}</label>
+                                    <input class="form-control" type="text" id="tag" name="tag" placeholder="{{__("Type name of tag")}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tag_info">{{__('Tag description')}}</label>
+                                    <textarea class="form-control" id="tag_info" name="tag_info" cols="30" rows="10" placeholder="{{__("Type tag description of tag")}}" required></textarea>
                                 </div>
 
                             </div>
