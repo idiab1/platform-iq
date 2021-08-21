@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="tag_info">{{__('Tag description')}}</label>
-                                    <textarea class="form-control" id="tag_info" name="tag_info" cols="30" rows="10" placeholder="{{__("Type tag description of tag")}}" required></textarea>
+                                    <textarea class="form-control" id="tag_info" name="tag_info" cols="30" rows="10" placeholder="{{__("Type tag description of tag")}}"></textarea>
                                 </div>
 
                             </div>
