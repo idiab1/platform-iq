@@ -79,8 +79,14 @@ class TagController extends Controller
 
         // Create new tag object form tag model
         $tag = Tag::find($id);
-        $tag->tag = $request->tag;
-        $tag->save();
+
+        // $tag->tag = $request->tag;
+        // $tag->save();
+        $tag->update([
+            'tag' => $request->tag,
+            'tag_info' => $request->tag_info,
+        ]);
+
         return redirect()->route('tags.index');
     }
 
