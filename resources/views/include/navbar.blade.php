@@ -38,13 +38,25 @@
                                 src="{{asset('uploads/users/' . Auth::user()->profile->image)}}"
                                 alt="user image" width="30" height="30">
                             </div>
-                            {{ Auth::user()->name }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('profile.index')}}">
-                                {{ __('Profile') }}
+                                <div class="profile">
+                                    <h5>{{ Auth::user()->name }}</h5>
+                                    <span>
+                                        {{ Auth::user()->email }}
+                                    </span>
+                                </div>
                             </a>
+
+                            <a class="dropdown-item" href="#">
+                                {{ __('Dashboard') }}
+                            </a>
+                            <a class="dropdown-item" href="{{route('user.post.create')}}">
+                                {{__('Create Post')}}
+                            </a>
+
                             <a class="dropdown-item" href="{{route('profile.setting')}}">
                                 {{ __('Setting') }}
                             </a>
