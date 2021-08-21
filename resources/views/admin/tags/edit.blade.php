@@ -15,7 +15,7 @@
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{route('tags.index')}}">Tags</a></li>
-        <li class="breadcrumb-item">Edit {{$tag->name . "'s"}}<li>
+        <li class="breadcrumb-item">Edit {{$tag->tag . "'s"}}<li>
     </ol>
 @endsection
 
@@ -36,8 +36,14 @@
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="tag">{{__('Tag')}}</label>
-                                    <input class="form-control" type="text" id="tag" name="tag" placeholder="{{__("Type tag of tag")}}" required value="{{$tag->tag}}">
+                                    <label for="tag">{{__('Tag name')}}</label>
+                                    <input class="form-control" type="text" id="tag" name="tag" placeholder="{{__("Type name of tag")}}" required value="{{$tag->tag}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tag_info">{{__('Tag description')}}</label>
+                                    <textarea class="form-control" id="tag_info" name="tag_info" cols="30" rows="10" placeholder="{{__("Type tag description of tag")}}">
+                                        {{$tag->tag_info}}
+                                    </textarea>
                                 </div>
 
                             </div>
