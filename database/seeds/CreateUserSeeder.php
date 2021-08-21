@@ -1,8 +1,10 @@
 <?php
 
 use App\User;
+use App\Profile;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class CreateUserSeeder extends Seeder
 {
@@ -13,7 +15,7 @@ class CreateUserSeeder extends Seeder
      */
     public function run()
     {
-        $user = [
+        $users = [
             [
                 'name' => 'Admin',
                 'email' => 'admin@test.com',
@@ -27,9 +29,19 @@ class CreateUserSeeder extends Seeder
                 'is_admin' => '0'
             ]
         ];
-        foreach ($user as $key => $value) {
+        foreach ($users as $user_data) {
 
-            User::create($value);
+            $user = User::create($user_data);
+            if ($user->profile == null) {
+                Profile::create([
+                    'user_id'   => $user->id,
+                    'image'     => 'default.png',
+                    'facebook'  => 'https://www.facebook.com',
+                    'twitter'   => 'https://www.twitter.com',
+                    'github'    => 'https://www.github.com',
+                    'about'     => 'About here',
+                ]);
+            }
         }
     }
 }
