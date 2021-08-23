@@ -91,6 +91,6 @@ class PostController extends Controller
 
 
         // Return to home page of posts with success session
-        return redirect()->route('posts.index')->with('success', 'Post of created');
+        return redirect()->route('home')->with('success', 'Post of created');
     }
 }
