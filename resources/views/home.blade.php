@@ -31,7 +31,14 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="article-list">Articles
+            <div class="article-list">
+                <div class="article-list-head">
+                    <div class="row">
+                        <div class="col-12">
+                            Posts
+                        </div>
+                    </div>
+                </div>
                 @if ($posts->count() > 0)
                     @foreach ($posts as $post)
                         <div class="card post mt-4 mb-4">
@@ -39,26 +46,57 @@
                                 <div class="card-header post-header">
                                     <img  class="img-fluid image-post" src="{{asset('uploads/posts/'. $post->image)}}" alt="{{$post->title}}">
                                 </div>
-                                @endif
+                            @endif
                             <div class="card-body post-body">
-                                <div class="post-content-head">
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            {{$post->created_at->diffForHumans()}}
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="post-content">
-                                    <h3 class="h1">
-                                        <a href="">{{$post->title}}</a>
-                                    </h3>
-                                    <ul class="list-unstyled tags-list">
-                                        @foreach ($post->tags as $tag)
-                                            <li class="d-inline-block">
-                                                <a href="#">#{{$tag->tag}}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+                                <div class="row">
+                                    <div class="col-md-2 image-user d-inline-block">
+                                        <img class="img-fluid rounded-circle border border-dark"
+                                        src="{{asset('uploads/users/' . $post->user->profile->image)}}"
+                                        alt="user image"width="30" height="30">
+                                    </div>
+                                    <div class="col-md-8 post-content">
+                                        <div class="post-content-head">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <a class="" href="{{route('profile.index')}}">
+                                                        {{$post->user->name}}
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    {{$post->created_at->diffForHumans()}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h3 class="h1">
+                                            <a href="">{{$post->title}}</a>
+                                        </h3>
+                                        <ul class="list-unstyled tags-list">
+                                            @foreach ($post->tags as $tag)
+                                                <li class="d-inline-block">
+                                                    <a href="#">#{{$tag->tag}}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="btn-group dropright">
+                                            <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <!-- Dropdown menu links -->
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fas fa-archive"></i> Archive
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fas fa-trash"></i> Delete
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
