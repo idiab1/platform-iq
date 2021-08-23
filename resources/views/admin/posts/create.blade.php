@@ -58,6 +58,7 @@
                                 <div class="form-group">
                                     <label for="category">{{__('Category')}}</label>
                                     <select class="form-control select2 searchable" name="category_id" id="category" required>
+                                        <option>{{__('All of Categories')}}</option>
                                         @foreach ($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
