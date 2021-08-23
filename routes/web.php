@@ -24,13 +24,17 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/tags', 'TagController@index')->name('user.tags.home');
 
 // Route of Posts
-Route::resource('posts', 'PostController')->only([
-    'create', 'store'
+Route::resource('posts', 'PostController')->except([
+    'index'
 ])->parameters([
     'posts' => 'id'
 ])->names([
     'create'    => 'user.post.create',
     'store'     => 'user.post.store',
+    'show'      => 'user.post.show',
+    'edit'      => 'user.post.edit',
+    'update'    => 'user.post.update',
+    'destroy'   => 'user.post.destroy',
 ]);
 
 // Route of Profiles
