@@ -5,6 +5,19 @@
     Add new post
 @endsection
 
+{{-- Styles --}}
+@section('styles')
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
+    <style>
+        .select2-container .select2-selection--single {
+            height: auto;
+        }
+
+    </style>
+@endsection
+
 {{-- Page name --}}
 @section('page_name')
     Add new post
@@ -23,7 +36,7 @@
                     </div>
                     <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('user.post.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
@@ -36,22 +49,30 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="category">{{__('Category')}}</label>
-                                    <select class="form-control" name="category_id" id="category" required>
-                                        <option>{{__('All of category')}}</option>
+                                    <select class="form-control select2 searchable" name="category_id" id="category" required>
+                                        <option>{{__('All of Categories')}}</option>
                                         @foreach ($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="tag">{{__('Tags')}}</label>
+                                    <select class="form-control select2 searchable" name="tags[]" id="tag" multiple required>
+                                        @foreach ($tags as $tag)
+                                            <option value="{{$tag->id}}">{{$tag->tag}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                                <div class="form-check">
+                                {{-- <div class="form-check">
                                     @foreach ($tags as $tag)
                                         <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}" id="tag">
                                         <label class="form-check-label" for="tag">
                                             {{$tag->tag}}
                                         </label><br/>
                                     @endforeach
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group">
                                     <label for="image">{{__('Image')}}</label>
@@ -78,3 +99,16 @@
 </div>
 @endsection
 
+@section('scripts')
+    <!-- Select 2 -->
+    <script src="{{asset('plugins/select2/js/select2.min.js')}}"></script>
+    <script>
+
+        $('.select2').select2();
+
+        // $(document).ready(function(){
+
+        // });
+    </script>
+
+@endsection
