@@ -34,7 +34,7 @@ Route::resource('posts', 'PostController')->except([
     'show'      => 'user.post.show',
     'edit'      => 'user.post.edit',
     'update'    => 'user.post.update',
-    'destroy'   => 'user.post.destroy',
+    'destroy'   => 'user.post.archive',
 ]);
 
 // Route of Profiles
@@ -47,3 +47,4 @@ Route::resource('profile', 'ProfileController')->only([
     'update'    => 'profile.update',
 ]);
 Route::get('profile/setting', 'ProfileController@setting')->name('profile.setting');
+Route::get('dashboard', 'ProfileController@dashboard')->name('user.dashboard');
