@@ -52,6 +52,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">{{__('Name')}}</th>
+                                <th scope="col">{{__('Related to')}}</th>
                                 <th scope="col">{{__('Edit')}}</th>
                                 <th scope="col">{{__('Delete')}}</th>
                             </tr>
@@ -65,6 +66,13 @@
                                     <tr>
                                         <td>{{$id++}}</td>
                                         <td>{{$tag->tag}}</td>
+                                        <td>
+                                            @if ($tag->posts->count() > 0)
+                                                {{$tag->posts->count()}} posts published
+                                            @else
+
+                                            @endif
+                                        </td>
                                         <td>
                                             <a class="btn btn-success btn-sm btn-edit" href="{{route('tag.edit', ['id' => $tag->id])}}">
                                                 <i class="fas fa-edit"></i>
@@ -89,6 +97,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">{{__('Name')}}</th>
+                                <th scope="col">{{__('Related to')}}</th>
                                 <th scope="col">{{__('Edit')}}</th>
                                 <th scope="col">{{__('Delete')}}</th>
                             </tr>
