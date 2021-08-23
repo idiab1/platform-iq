@@ -50,7 +50,7 @@
                                 </div>
                             </a>
 
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{route('user.dashboard')}}">
                                 {{ __('Dashboard') }}
                             </a>
                             <a class="dropdown-item" href="{{route('user.post.create')}}">
