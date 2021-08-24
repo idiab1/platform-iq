@@ -180,4 +180,42 @@ class PostController extends Controller
         // Return to home page of posts with success session
         return redirect()->route('home');
     }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    // Soft delete
+    public function destroy($id)
+    {
+        $post = Post::where('id', $id)->where('user_id', Auth::user()->id)->first();
+        $post->delete();
+        return redirect()->back();
+    }
+
+    /***
+     * Get all posts trashed
+     */
+    public function trashed()
+    {
+        $postsTrashed = Post::onlyTrashed()->where('user_id', Auth::user()->id)->get();
+        $postsTrashedCount = Post::onlyTrashed()->where('user_id', Auth::user()->id)->get();
+        return view('posts.trashed', compact('postsTrashed', 'postsTrashedCount'));
+    }
+
+    // Delete post
+    public function hdelete($id)
+    {
+        $post = Post::withTrashed()->where('id', $id)->where('user_id', Auth::user()->id)->first();
+        $post->forceDelete();
+        return redirect()->back();
+    }
+
+    public function restore($id)
+    {
+        $post = Post::withTrashed()->where('id', $id)->where('user_id', Auth::user()->id)->first();
+        $post->restore();
+        return redirect()->back();
+    }
 }
