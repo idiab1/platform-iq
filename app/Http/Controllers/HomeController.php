@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Tag;
+use App\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +28,7 @@ class HomeController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->get();
         $tags  = Tag::all();
-        return view('home', compact('posts', 'tags'));
+        $categories  = Category::all();
+        return view('home', compact('posts', 'tags', 'categories'));
     }
 }
