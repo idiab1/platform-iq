@@ -16,7 +16,9 @@
     <div class="row">
         <div class="col-12">
             <div class="dashboard-head">
-                <h2 class="h1 heading">Dashboard >> Posts Trashed</h2>
+                <h2 class="h1 heading">
+                    <a href="{{route('user.dashboard')}}">Dashboard</a> >> <a href="{{route('user.posts.trashed')}}">Posts Trashed</a>
+                </h2>
             </div>
         </div>
     </div>
