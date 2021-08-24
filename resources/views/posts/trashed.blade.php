@@ -120,7 +120,7 @@
                         </div>
                     @endforeach
                 @else
-                    false
+                    <p>There are no posts</p>
                 @endif
             </div>
         </div>
