@@ -36,8 +36,9 @@ Route::resource('posts', 'PostController')->except([
     'update'    => 'user.post.update',
     'destroy'   => 'user.post.archive',
 ]);
-Route::get('/posts_trashed', 'PostController@trashed')->name('posts.trashed');
-Route::get('/posts/hdelete/{id}', 'PostController@hdelete')->name('posts.hdelete');
+Route::get('/posts_trashed', 'PostController@trashed')->name('user.posts.trashed');
+Route::delete('/posts/hdelete/{id}', 'PostController@hdelete')->name('user.posts.hdelete');
+Route::get('/posts/restore/{id}', 'PostController@restore')->name('user.posts.restore');
 
 
 // Route of Profiles
