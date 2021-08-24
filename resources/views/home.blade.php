@@ -10,7 +10,7 @@
 <div class="homepage">
     <div class="row">
         <div class="col-md-3">
-            <div class="sidebar-left">Sidebar left
+            <div class="sidebar-left">
                 <h4>{{\App\Setting::first(['web_name'])->web_name}} Community</h4>
                 <div class="sidebar-links">
                     <ul class="list-unstyled ">
@@ -35,7 +35,7 @@
                 <div class="article-list-head">
                     <div class="row">
                         <div class="col-12">
-                            Posts
+                            <h2 class="h1 headin">Posts</h2>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                                             </ul>
                                         </div>
                                         <h3 class="h1">
-                                            <a href="">{{$post->title}}</a>
+                                            <a href="{{route('user.post.show', ['id' => $post->slug])}}">{{$post->title}}</a>
                                         </h3>
                                         <ul class="list-unstyled tags-list">
                                             @foreach ($post->tags as $tag)
@@ -85,15 +85,24 @@
                                             </button>
                                             <div class="dropdown-menu">
                                                 <!-- Dropdown menu links -->
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="{{route('user.post.edit', ['id' => $post->slug])}}">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fas fa-archive"></i> Archive
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fas fa-trash"></i> Delete
-                                                </a>
+                                                <form class="dropdown-item" action="{{route('user.post.archive', ['id' => $post->id])}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn" type="submit">
+                                                        <i class="fas fa-archive"></i> {{__('Archive')}}
+                                                    </button>
+                                                </form>
+                                                <form class="dropdown-item" action="{{route('user.posts.hdelete', ['id' => $post->id])}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-sm" type="submit">
+                                                        <i class="fas fa-trash"></i> Delete
+                                                    </button>
+                                                </form>
+
                                             </div>
                                         </div>
                                     </div>
