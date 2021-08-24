@@ -20,8 +20,17 @@ Auth::routes();
 // Route of home
 Route::get('/', 'HomeController@index')->name('home');
 
-// Tags Route
-Route::get('/tags', 'TagController@index')->name('user.tags.home');
+// Route of Profiles
+Route::resource('profile', 'ProfileController')->only([
+    'index', 'update'
+])->parameters([
+    'profile' => 'id'
+])->names([
+    'index'     => 'profile.index',
+    'update'    => 'profile.update',
+]);
+Route::get('profile/setting', 'ProfileController@setting')->name('profile.setting');
+Route::get('dashboard', 'ProfileController@dashboard')->name('user.dashboard');
 
 // Route of Posts
 Route::resource('posts', 'PostController')->except([
@@ -40,15 +49,5 @@ Route::get('/posts_trashed', 'PostController@trashed')->name('user.posts.trashed
 Route::delete('/posts/hdelete/{id}', 'PostController@hdelete')->name('user.posts.hdelete');
 Route::get('/posts/restore/{id}', 'PostController@restore')->name('user.posts.restore');
 
-
-// Route of Profiles
-Route::resource('profile', 'ProfileController')->only([
-    'index', 'update'
-])->parameters([
-    'profile' => 'id'
-])->names([
-    'index'     => 'profile.index',
-    'update'    => 'profile.update',
-]);
-Route::get('profile/setting', 'ProfileController@setting')->name('profile.setting');
-Route::get('dashboard', 'ProfileController@dashboard')->name('user.dashboard');
+// Tags Route
+Route::get('/tags', 'TagController@index')->name('user.tags.home');
