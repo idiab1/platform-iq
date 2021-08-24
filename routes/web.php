@@ -36,6 +36,8 @@ Route::resource('posts', 'PostController')->except([
     'update'    => 'user.post.update',
     'destroy'   => 'user.post.archive',
 ]);
+Route::get('/posts_trashed', 'PostController@trashed')->name('posts.trashed');
+
 
 // Route of Profiles
 Route::resource('profile', 'ProfileController')->only([
