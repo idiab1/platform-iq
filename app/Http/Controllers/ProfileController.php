@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use App\User;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -128,5 +129,12 @@ class ProfileController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function dashboard()
+    {
+        $posts = Post::where('user_id', Auth::user()->id)->get();
+        $postsTrashed = Post::onlyTrashed()->where('user_id', Auth::user()->id)->get();
+        return view('profile.dashboard', compact('posts', 'postsTrashed'));
     }
 }
