@@ -9,18 +9,18 @@
 
     <title> Platform IQ - @yield('title', 'Unknown Page') </title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
 
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/fontawsome.all.css')}}">
+
+    <!-- Bootstrap -->
+    {{-- <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}"> --}}
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/fontawsome.all.css')}}">
 
     {{-- Other styles --}}
     @yield('styles')
@@ -40,6 +40,8 @@
 
     </div>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- jQuery -->
     <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     {{-- Other scripts --}}
