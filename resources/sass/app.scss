@@ -1,6 +1,9 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
 // Variables
 @import 'helpers/variables';
 
@@ -16,8 +19,7 @@
 // Variables
 @import 'components/buttons';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+
 
 // .navbar {
 //     background: red !important;
