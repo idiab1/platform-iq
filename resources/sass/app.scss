@@ -2,7 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import './helpers/variables';
+@import 'helpers/variables';
+
+// Mixins
+@import 'helpers/mixins';
+
+// Extends
+@import 'helpers/extends';
+
+// Global rules
+@import 'layouts/global';
+
+// Variables
+@import 'components/buttons';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// .navbar {
+//     background: red !important;
+// }
