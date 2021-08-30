@@ -1,0 +1,17 @@
+/* Button Create post */
+.btn-create-post {
+    color: #fff !important;
+    font-weight: 600;
+    line-height: 1;
+    padding: 12px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    background-color: #1e49a2;
+    border-color: #1e49a2;
+    &:hover{
+        background-color: $dark-blue;
+        border-color: $dark-blue;
+    }
+
+}
+/* End of Button Create post */
