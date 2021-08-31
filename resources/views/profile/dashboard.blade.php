@@ -12,7 +12,7 @@
 
 {{-- Content --}}
 @section('content')
-<div class="dashboard">
+<div class="dashboard-page">
     <div class="row">
         <div class="col-12">
             <div class="dashboard-head">
