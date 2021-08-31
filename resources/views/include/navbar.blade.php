@@ -32,9 +32,9 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <div class="image d-inline-block mr-2 ml-2">
-                                <img class="preview rounded-circle border border-dark"
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <div class="image mr-2 ml-2">
+                                <img class="preview rounded-circle "
                                 src="{{asset('uploads/users/' . Auth::user()->profile->image)}}"
                                 alt="user image" width="30" height="30">
                             </div>
@@ -49,7 +49,7 @@
                                     </span>
                                 </div>
                             </a>
-
+                            <hr />
                             <a class="dropdown-item" href="{{route('user.dashboard')}}">
                                 {{ __('Dashboard') }}
                             </a>
@@ -60,6 +60,7 @@
                             <a class="dropdown-item" href="{{route('profile.setting')}}">
                                 {{ __('Setting') }}
                             </a>
+                            <hr />
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
