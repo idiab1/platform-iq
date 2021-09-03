@@ -23,7 +23,23 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
+            <div class="card status">
+                <div class="card-body status-content">
+                    <h4 class="status-count">{{$posts->count()}}</h4>
+                    <span>Total posts available</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="card status">
+                <div class="card-body status-content">
+                    <h4 class="status-count">{{$postsTrashed->count()}}</h4>
+                    <span>Total Posts Archive</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
             <div class="card status">
                 <div class="card-body status-content">
                     <h4 class="status-count">0</h4>
@@ -31,23 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card status">
-                <div class="card-body status-content">
-                    <h4 class="status-count">0</h4>
-                    <span>Test</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card status">
-                <div class="card-body status-content">
-                    <h4 class="status-count">0</h4>
-                    <span>Test</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
             <div class="card status">
                 <div class="card-body status-content">
                     <h4 class="status-count">0</h4>
@@ -60,29 +60,42 @@
         <div class="col-md-3">
             <div class="posts-link">
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="{{route('user.dashboard')}}">Posts</a>
-                        <span class="badges badge-secondary">0</span>
+                    <li class="active">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{{route('user.dashboard')}}">Posts</a>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <span class="badges badge-secondary">{{$posts->count()}}</span>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="{{route('user.posts.trashed')}}">Posts Archive</a>
-                        <span class="badges badge-secondary">{{$postsTrashed->count()}}</span>
-                    </li>
-                    <li>
-                        <a href="{{route('user.dashboard')}}">Posts</a>
-                        <span class="badges badge-secondary">0</span>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{{route('user.posts.trashed')}}">Posts Archive</a>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <span class="badges badge-secondary">{{$postsTrashed->count()}}</span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col-md-9">
-            <div class="posts-trashed">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="h1 sub-headig">Posts</h3>
+                </div>
+            </div>
+            <div class="posts-list">
                 @if ($posts->count() > 0)
                     @foreach ($posts as $post)
                         <div class="card post">
                             <div class="card-body post-body">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 col-sm-6">
                                         <div class="post-content">
                                             <h3>
                                                 <a href="{{route('user.post.show', ['id' => $post->slug])}}">
@@ -92,7 +105,7 @@
                                             <span>Published: {{$post->created_at->diffForHumans()}}</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-6">
                                         <div class="post-management">
                                             <ul class="list-unstyled">
                                                 <li>
