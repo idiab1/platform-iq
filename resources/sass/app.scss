@@ -16,15 +16,17 @@
 // Global rules
 @import 'layouts/global';
 
+// Buttons components
+@import 'components/buttons';
+
+// Buttons components
+@import 'components/heading';
+
 // Navbar
 @import 'layouts/navbar';
 
 // Dashboard page
 @import 'pages/dashboard';
-
-// Variables
-@import 'components/buttons';
-
 
 
 // .navbar {
