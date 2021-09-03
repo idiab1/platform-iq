@@ -48,7 +48,7 @@
                                     <textarea class="form-control" name="content" id="content" cols="30" rows="10" placeholder="{{__("Type Content of post")}}" required></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="category">{{__('Category')}}</label>
+                                    <label for="category">{{__('Categories')}}</label>
                                     <select class="form-control select2 searchable" name="category_id" id="category" required>
                                         <option>{{__('All of Categories')}}</option>
                                         @foreach ($categories as $category)
