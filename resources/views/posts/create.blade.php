@@ -36,7 +36,7 @@
                     </div>
                     <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{route('user.post.store')}}" method="POST" enctype="multipart/form-data">
+                        <form class="create-post-form" action="{{route('user.post.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
