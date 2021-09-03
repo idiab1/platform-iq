@@ -199,9 +199,10 @@ class PostController extends Controller
      */
     public function trashed()
     {
+        $posts = Post::all();
         $postsTrashed = Post::onlyTrashed()->where('user_id', Auth::user()->id)->get();
         $postsTrashedCount = Post::onlyTrashed()->where('user_id', Auth::user()->id)->get();
-        return view('posts.trashed', compact('postsTrashed', 'postsTrashedCount'));
+        return view('posts.trashed', compact('posts', 'postsTrashed', 'postsTrashedCount'));
     }
 
     // Delete post
