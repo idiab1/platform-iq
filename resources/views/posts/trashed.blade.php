@@ -12,7 +12,7 @@
 
 {{-- Content --}}
 @section('content')
-<div class="dashboard">
+<div class="dashboard-page">
     <div class="row">
         <div class="col-12">
             <div class="dashboard-head">
@@ -60,17 +60,25 @@
         <div class="col-md-3">
             <div class="posts-link">
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="{{route('user.dashboard')}}">Posts</a>
-                        <span class="badges badge-secondary">0</span>
+                    <li class="active">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{{route('user.dashboard')}}">Posts</a>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <span class="badges badge-secondary">{{$posts->count()}}</span>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="{{route('user.posts.trashed')}}">Posts Archive</a>
-                        <span class="badges badge-secondary">{{$postsTrashedCount->count()}}</span>
-                    </li>
-                    <li>
-                        <a href="{{route('user.dashboard')}}">Posts</a>
-                        <span class="badges badge-secondary">0</span>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{{route('user.posts.trashed')}}">Posts Archive</a>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <span class="badges badge-secondary">{{$postsTrashed->count()}}</span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -78,10 +86,10 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="h1 headig">Posts</h2>
+                    <h3 class="h1 sub-headig">Posts Archive</h3>
                 </div>
             </div>
-            <div class="posts">
+            <div class="posts-list">
                 @if ($postsTrashed->count() > 0)
                     @foreach ($postsTrashed as $post)
                         <div class="card post">
