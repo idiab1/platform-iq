@@ -1,0 +1,83 @@
+/* Dashboard profile */
+.dashboard-page{
+    .status{
+        margin-bottom: 2rem;
+        background: #fff;    
+        border: 1px solid rgb(0 0 0 / 7%);
+        .status-content{
+            .status-count{
+                font-weight: bold;
+                font-size: 28px;
+                margin-bottom: .25rem;
+            }
+            span{
+                color: #535353;
+                font-size: 15px;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .posts-link{
+        background-color: transparent;
+        ul {
+            padding: .5rem;
+
+            li {
+                padding: 10px 0;
+                display:block;
+                a{
+                    font-size: 15px;
+                    font-weight: 600;
+                    margin-left: 10px;
+                }
+                span{
+                    padding: 4px 8px;
+                    font-weight: 600;    margin-right: 10px;
+                }
+                &.active {
+                    background-color: #fff;
+                }
+                &:hover {
+                    background-color: #d3d6db;
+                }
+            }
+        }
+    }
+
+    .posts-list{
+        .post{
+            margin-bottom: 2rem;
+            border: 1px solid rgb(0 0 0 / 7%);
+
+            .post-body{
+                .post-content{
+                    h3{
+                        text-transform: capitalize;
+                        font-size: 27px;
+                        a {
+                            color: $dark-blue;
+                        }
+                    }
+                    span{
+                        color: #535353;
+                        font-size: 15px;
+                        text-transform: capitalize;
+
+                    }
+                }
+                .post-management{
+                    ul{
+                        li{
+                            display:inline-block;
+                            margin: 0 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* End of Dashboard profile */
