@@ -59,6 +59,7 @@
                                 <div class="form-group">
                                     <label for="tag">{{__('Tags')}}</label>
                                     <select class="form-control select2 searchable" name="tags[]" id="tag" multiple required>
+                                        <option>{{__('All of Categories')}}</option>
                                         @foreach ($tags as $tag)
                                             <option value="{{$tag->id}}">{{$tag->tag}}</option>
                                         @endforeach
@@ -87,7 +88,7 @@
 
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary btn-add-post" type="submit">{{__('Add')}}</button>
+                                <button class="btn btn-primary crayons-btn btn-add-post" type="submit">{{__('Add')}}</button>
                             </div>
                         </form>
 
