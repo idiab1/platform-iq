@@ -22,12 +22,12 @@
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('Create new account') }}</a>
+                            <a class="nav-link btn btn-primary crayons-btn" href="{{ route('register') }}">{{ __('Create new account') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary btn-create-post" href="{{route('user.post.create')}}">
+                        <a class="nav-link btn btn-primary crayons-btn btn-create-post" href="{{route('user.post.create')}}">
                             {{__('Create Post')}}
                         </a>
                     </li>
