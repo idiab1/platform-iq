@@ -12,10 +12,10 @@
 
 {{-- Content --}}
 @section('content')
-<div class="users-page">
+<div class="setting-page">
     <div class="row">
         <div class="col-md-6 m-auto">
-            <div class="users-form">
+            <div class="setting-form">
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="h1 card-title">Edit {{$user->name . "'s"}}</h3>
@@ -99,7 +99,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary crayons-btn">Edit</button>
                             </div>
                         </form>
 
