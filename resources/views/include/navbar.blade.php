@@ -22,7 +22,7 @@
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary crayons-btn" href="{{ route('register') }}">{{ __('Create new account') }}</a>
+                            <a class="nav-link btn btn-primary crayons-btn btn-create-account" href="{{ route('register') }}">{{ __('Create new account') }}</a>
                         </li>
                     @endif
                 @else
