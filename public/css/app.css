@@ -10960,25 +10960,33 @@ a:hover {
 
 /* End of Global Rules */
 
-/* Button Create post */
-
-.btn-create-post {
-  color: #fff !important;
+.crayons-btn {
   font-weight: 600;
   line-height: 1;
   padding: 12px;
+  color: #fff !important;
   text-transform: capitalize;
   letter-spacing: 1px;
   background-color: #1e49a2;
   border-color: #1e49a2;
 }
 
-.btn-create-post:hover {
+.crayons-btn:hover {
   background-color: #233b6e;
   border-color: #233b6e;
 }
 
+/* Button Create new account */
+
+/* End of button create new account */
+
+/* Button Create post */
+
 /* End of Button Create post */
+
+/* Button Add posts */
+
+/* End of Add posts */
 
 /* Heading */
 
@@ -11012,6 +11020,11 @@ a:hover {
 
 .navbar .navbar-brand {
   font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .navbar .navbar-nav .dropdown .dropdown-toggle .image {
@@ -11141,4 +11154,80 @@ a:hover {
 }
 
 /* End of Dashboard profile */
+
+/* Setting page */
+
+.setting-page .setting-form .card .card-header {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+
+.setting-page .setting-form .card .card-header h3 {
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+}
+
+.setting-page .setting-form .card .card-body {
+  padding: 1rem;
+}
+
+.setting-page .setting-form .card .card-body label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.setting-page .setting-form .card .card-body input {
+  height: calc(2rem + 0.75rem + 2px);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.setting-page .setting-form .card .card-body textarea {
+  height: 150px;
+}
+
+.setting-page .setting-form .card .card-footer {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+
+/* End of Setting page */
+
+/* posts page */
+
+.posts-page .posts-form .card .card-header {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+
+.posts-page .posts-form .card .card-header h3 {
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+}
+
+.posts-page .posts-form .card .card-body {
+  padding: 1rem;
+}
+
+.posts-page .posts-form .card .card-body label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.posts-page .posts-form .card .card-body input {
+  height: calc(2rem + 0.75rem + 2px);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.posts-page .posts-form .card .card-body textarea {
+  height: 150px;
+}
+
+.posts-page .posts-form .card .card-footer {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+
+/* End of posts page */
 
