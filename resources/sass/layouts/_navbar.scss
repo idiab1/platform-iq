@@ -4,6 +4,12 @@
         font-weight: bold;
     }
     .navbar-nav{
+        .nav-item{
+            .nav-link{
+                font-size: 17px;
+                font-weight: 600;
+            }
+        }
         .dropdown {
             .dropdown-toggle {
                 .image {
