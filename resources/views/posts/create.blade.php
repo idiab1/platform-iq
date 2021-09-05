@@ -66,15 +66,6 @@
                                     </select>
                                 </div>
 
-                                {{-- <div class="form-check">
-                                    @foreach ($tags as $tag)
-                                        <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}" id="tag">
-                                        <label class="form-check-label" for="tag">
-                                            {{$tag->tag}}
-                                        </label><br/>
-                                    @endforeach
-                                </div> --}}
-
                                 <div class="form-group">
                                     <label for="image">{{__('Image')}}</label>
                                     <div class="input-group mb-3">
