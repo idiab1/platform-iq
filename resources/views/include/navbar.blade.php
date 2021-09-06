@@ -7,11 +7,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            {{-- <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('posts.index') }}">{{ __('Posts') }}</a>
-                </li>
-            </ul> --}}
+            <ul class="navbar-nav m-auto">
+                <form class="form-inline my-2 my-lg-0" action="" method="GET">
+                    <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline btn-sm my-2 my-sm-0" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
