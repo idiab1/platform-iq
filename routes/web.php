@@ -51,3 +51,13 @@ Route::get('/posts/restore/{id}', 'PostController@restore')->name('user.posts.re
 
 // Tags Route
 Route::get('/tags', 'TagController@index')->name('user.tags.home');
+
+// Contacts Route
+Route::resource('contacts', 'ContactController')->only([
+    'index', 'store'
+])->parameters([
+    'contacts' => 'id'
+])->names([
+    'index'      => 'user.contact.index',
+    'store'      => 'user.contact.store',
+]);
