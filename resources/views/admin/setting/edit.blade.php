@@ -20,7 +20,7 @@
 
 {{-- Content --}}
 @section('content')
-<div class="setting-page">
+<div class="setting-page page">
     <div class="row">
         <div class="col-md-8 m-auto">
             <div class="setting-form">

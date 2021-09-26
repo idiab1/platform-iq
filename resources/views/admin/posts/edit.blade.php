@@ -34,7 +34,7 @@
 
 {{-- Content --}}
 @section('content')
-<div class="tags-page">
+<div class="tags-page page">
     <div class="row">
         <div class="col-md-8 m-auto">
             <div class="tags-form">

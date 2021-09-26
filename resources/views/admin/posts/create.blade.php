@@ -34,7 +34,7 @@
 
 {{-- Content --}}
 @section('content')
-<div class="posts-page">
+<div class="posts-page page">
     <div class="row">
         <div class="col-md-8 m-auto">
             <div class="posts-form">

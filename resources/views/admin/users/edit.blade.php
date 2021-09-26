@@ -21,7 +21,7 @@
 
 {{-- Content --}}
 @section('content')
-<div class="users-page">
+<div class="users-page page">
     <div class="row">
         <div class="col-md-8 m-auto">
             <div class="users-form">

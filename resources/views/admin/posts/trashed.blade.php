@@ -32,7 +32,7 @@
 
 @section('content')
 
-<section class="posts-section">
+<section class="posts-section page">
     <div class="row">
         <div class="col-12">
             <div class="card">

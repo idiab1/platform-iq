@@ -27,7 +27,7 @@
 @endsection
 
 @section('content')
-<section class="categories-section">
+<section class="categories-section page">
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="card">

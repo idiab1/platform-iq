@@ -21,7 +21,7 @@
 
 {{-- Content --}}
 @section('content')
-<div class="row justify-content-center categories-section">
+<div class="row justify-content-center categories-section page">
     <div class="col-md-8">
         <div class="card form-category">
             <div class="card-header">{{ __('Create Category') }}</div>

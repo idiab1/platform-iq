@@ -29,7 +29,7 @@
 
 {{-- Content --}}
 @section('content')
-    <section class="user-section">
+    <section class="user-section page">
         <div class="row">
             <div class="col-12">
                 <div class="card">

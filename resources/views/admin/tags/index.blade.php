@@ -28,7 +28,7 @@
 
 @section('content')
 
-<section class="tags-section">
+<section class="tags-section page">
     <div class="row">
         <div class="col-12">
             <div class="card">
