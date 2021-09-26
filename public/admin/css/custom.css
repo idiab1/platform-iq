@@ -2,14 +2,37 @@
 :root{
 	--dark-blue: #015597;
 	--dark-color: #212121;
-
 }
-
 /* End of Custom Color */
-/* Navbar */
 
+/* Navbar */
 .navbar .navbar-nav .nav-link {
 	color: rgb(0 0 0 / 78%);
+}
+
+.navbar .dropdown-menu{
+    margin-top: 5px;
+    min-width: 13rem;
+    border: 1px solid #000;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.navbar .dropdown-menu .dropdown-item {
+    padding: 0.25rem;
+    font-size: 17px;
+    line-height: 1.6;
+}
+.navbar .dropdown-menu .dropdown-item:hover{
+    color: var(--dark-blue);
+}
+.navbar .dropdown-menu .dropdown-item .profile h5{
+    margin-bottom: 0;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.navbar .dropdown-menu .dropdown-item .profile span{
+    color: #585858;
+    font-size: 16px;
 }
 
 /* End of Navbar */
