@@ -20,7 +20,7 @@
 <div class="wrapper">
 
     {{-- Navbar --}}
-    @include('admin.include.navbar', ['setting' => \App\Setting::first(['id'])])
+    @include('admin.include.navbar', ['setting' => \App\Setting::first()])
 
     {{-- Sidebar --}}
     @include('admin.include.sidebar', ['setting' => \App\Setting::first(['id'])])
