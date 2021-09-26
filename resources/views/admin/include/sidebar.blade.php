@@ -14,7 +14,7 @@
                 <img src="{{asset('uploads/users/' . Auth::user()->profile->image)}}" class="img-circle border border-dark elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{auth()->user()->name}}</a>
+                <a href="{{route('profile.index')}}" class="d-block">{{auth()->user()->name}}</a>
             </div>
         </div>
 
