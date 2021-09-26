@@ -1,7 +1,7 @@
 /* Custom Color */
 :root{
-    --dark-blue: #015597;
-    --dark-color: #212121;
+	--dark-blue: #015597;
+	--dark-color: #212121;
 
 }
 
@@ -9,7 +9,7 @@
 /* Navbar */
 
 .navbar .navbar-nav .nav-link {
-    color: rgb(0 0 0 / 78%);
+	color: rgb(0 0 0 / 78%);
 }
 
 /* End of Navbar */
@@ -17,53 +17,108 @@
 /* Sidebar */
 [class*=sidebar-dark-],
 .main-sidebar {
-    background-color: var(--dark-color);
+	background-color: var(--dark-color);
 }
 
 [class*=sidebar-dark] .btn-sidebar,
 [class*=sidebar-dark] .form-control-sidebar {
-    background-color: var(--dark-color);
-    border: 1px solid #56606a;
-    color: #fff;
+	background-color: var(--dark-color);
+	border: 1px solid #454545;
+	color: #fff;
+}
+
+[class*=sidebar-dark] .brand-link,
+[class*=sidebar-dark] .user-panel {
+    border-bottom: 1px solid #454545;
 }
 
 /* End of Sidebar */
 
 
 /* footer */
-
-
+.main-footer {
+    background-color: #fff;
+    border-top: 1px solid #dee2e6;
+    color: rgb(0 0 0 / 78%);
+    padding: 1rem;
+}
+.main-footer p{
+    margin: 0;
+    font-size: 17px;
+}
+.main-footer p a{
+    font-weight: 600;
+    color: var(--dark-blue);
+}
 /* End of footer */
 
 
 /* Components */
 /* heading */
 .heading{
-    font-size: 1.5rem;
-    font-weight: 600;
+	font-size: 1.5rem;
+	font-weight: 600;
 }
 /* Breadcrumb */
 .content-header{
-    padding: 20px;
+	padding: 20px;
 }
 .content-header .breadcrumb .breadcrumb-item {
-    font-size: 16px;
-    color: #535353;
+	font-size: 16px;
+	color: #535353;
 }
 .content-header .breadcrumb .breadcrumb-item a{
-    color: #000;
-    font-size: 18px;
-    font-weight: 500;
+	color: #000;
+	font-size: 18px;
+	font-weight: 500;
 }
+
+/* Button */
+.crayons-btn{
+	font-weight: 600;
+	line-height: 1;
+	padding: 12px;
+	color: #fff !important;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	background-color: var(--dark-blue);
+	border-color: var(--dark-blue);
+}
+.crayons-btn:hover,
+.crayons-btn:focus{
+	background-color: var(--dark-blue);
+	border-color: var(--dark-blue);
+}
+
+.form-btn {
+    font-weight: 400;
+    padding: 10px;
+}
+
+/* Card */
+.card-primary:not(.card-outline)>.card-header {
+    background-color: var(--dark-blue);
+}
+
 
 /* End of Components */
 
+/* Form */
 .input-group-sm>.custom-select,
 .input-group-sm>.form-control,
 .input-group-sm>.input-group-append>.btn,
 .input-group-sm>.input-group-append>.input-group-text,
 .input-group-sm>.input-group-prepend>.btn,
 .input-group-sm>.input-group-prepend>.input-group-text {
-    font-size: .95rem;
+	font-size: .95rem;
 }
+.setting-page form input{
+    height: calc(2.25rem + 6px);
+    color: #545454;
+}
+.page form input:focus{
+    border-color: var(--dark-blue);
+}
+/* End of Form */
+
 
