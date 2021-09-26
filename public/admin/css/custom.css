@@ -1,0 +1,66 @@
+/* Custom Color */
+:root{
+    --dark-blue: #015597;
+    --dark-color: #212121;
+
+}
+
+/* End of Custom Color */
+/* Navbar */
+
+.navbar .navbar-nav .nav-link {
+    color: rgb(0 0 0 / 78%);
+}
+
+/* End of Navbar */
+
+/* Sidebar */
+[class*=sidebar-dark-],
+.main-sidebar {
+    background-color: var(--dark-color);
+}
+
+[class*=sidebar-dark] .btn-sidebar,
+[class*=sidebar-dark] .form-control-sidebar {
+    background-color: var(--dark-color);
+    border: 1px solid #56606a;
+    color: #fff;
+}
+
+/* End of Sidebar */
+
+
+/* footer */
+
+
+/* End of footer */
+
+
+/* Components */
+/* heading */
+.heading{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+/* Breadcrumb */
+.content-header{
+    padding: 20px;
+}
+.content-header .breadcrumb .breadcrumb-item {
+    font-size: 17px;
+}
+.content-header .breadcrumb .breadcrumb-item a{
+    color: #000;
+}
+
+/* End of Components */
+
+.input-group-sm>.custom-select,
+.input-group-sm>.form-control,
+.input-group-sm>.input-group-append>.btn,
+.input-group-sm>.input-group-append>.input-group-text,
+.input-group-sm>.input-group-prepend>.btn,
+.input-group-sm>.input-group-prepend>.input-group-text {
+    font-size: .95rem;
+}
+
