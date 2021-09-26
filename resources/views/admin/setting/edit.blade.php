@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phoneNumber">Phone Number</label>
-                                    <input class="form-control" type="number" id="phoneNumber" name="phone_number" value="{{$setting->phone_number}}" placeholder="Enter phone number">
+                                    <input class="form-control" type="text" id="phoneNumber" name="phone_number" value="{{$setting->phone_number}}" placeholder="Enter phone number">
                                 </div>
                                 <div class="form-group">
                                     <label for="webEmail">Email</label>
@@ -55,7 +55,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button class="btn btn-primary crayons-btn form-btn" type="submit">Submit</button>
                             </div>
                         </form>
 
