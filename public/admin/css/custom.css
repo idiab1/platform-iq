@@ -47,10 +47,13 @@
     padding: 20px;
 }
 .content-header .breadcrumb .breadcrumb-item {
-    font-size: 17px;
+    font-size: 16px;
+    color: #535353;
 }
 .content-header .breadcrumb .breadcrumb-item a{
     color: #000;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 /* End of Components */
