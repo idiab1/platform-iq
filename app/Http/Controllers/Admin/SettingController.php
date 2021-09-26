@@ -33,7 +33,6 @@ class SettingController extends Controller
         // validate on all data coming from users
         $this->validate($request, [
             'web_name' => 'string',
-            'phone_number',
             'web_email' => 'email',
             'address' => 'string'
 
