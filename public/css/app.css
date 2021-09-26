@@ -10972,8 +10972,8 @@ a:hover {
 }
 
 .crayons-btn:hover {
-  background-color: #233b6e;
-  border-color: #233b6e;
+  background-color: #015597;
+  border-color: #015597;
 }
 
 /* Button Create new account */
@@ -11053,7 +11053,7 @@ a:hover {
 }
 
 .navbar .navbar-nav .dropdown .dropdown-menu .dropdown-item:hover {
-  color: #233b6e;
+  color: #015597;
 }
 
 .navbar .navbar-nav .dropdown .dropdown-menu .dropdown-item:nth-of-type(1) .profile h5 {
@@ -11139,7 +11139,7 @@ a:hover {
 }
 
 .dashboard-page .posts-list .post .post-body .post-content h3 a {
-  color: #233b6e;
+  color: #015597;
 }
 
 .dashboard-page .posts-list .post .post-body .post-content span {
