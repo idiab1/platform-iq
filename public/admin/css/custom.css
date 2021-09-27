@@ -110,6 +110,9 @@ color: #fff;
 .page div.dataTables_wrapper div.dataTables_filter label input{
     height: calc(1.8125rem + 5px);
 }
+.page div.dataTables_wrapper div.dataTables_filter label input:focus{
+    border-color: var(--dark-blue);
+}
 .page table.dataTable{
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
@@ -201,6 +204,7 @@ table.table-bordered.dataTable tbody td a{
 .page .btn{
     transition-delay: .2s;
 }
+
 /* Card */
 .card-primary:not(.card-outline)>.card-header {
 	background-color: var(--dark-blue);
