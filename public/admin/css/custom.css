@@ -1,7 +1,7 @@
 /* Custom Color */
 :root{
---dark-blue: #015597;
---dark-color: #212121;
+    --dark-blue: #015597;
+    --dark-color: #212121;
 }
 .content-wrapper {
     background-color: #f6f6f6;
@@ -10,7 +10,7 @@
 
 /* Navbar */
 .navbar .navbar-nav .nav-link {
-color: rgb(0 0 0 / 78%);
+    color: rgb(0 0 0 / 78%);
 }
 
 .navbar .dropdown-menu{
@@ -135,38 +135,38 @@ table.table-bordered.dataTable tbody td a{
 /* Components */
 /* heading */
 .heading{
-font-size: 1.5rem;
-font-weight: 600;
+    font-size: 1.5rem !important;
+    font-weight: 600;
 }
 /* Breadcrumb */
 .content-header{
-padding: 20px;
+    padding: 20px;
 }
 .content-header .breadcrumb .breadcrumb-item {
-font-size: 16px;
-color: #535353;
+    font-size: 16px;
+    color: #535353;
 }
 .content-header .breadcrumb .breadcrumb-item a{
-color: #000;
-font-size: 18px;
-font-weight: 500;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 /* Button */
 .crayons-btn{
-font-weight: 600;
-line-height: 1;
-padding: 12px;
-color: #fff !important;
-text-transform: capitalize;
-letter-spacing: 1px;
-background-color: var(--dark-blue);
-border-color: var(--dark-blue);
+    font-weight: 600;
+    line-height: 1;
+    padding: 12px;
+    color: #fff !important;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
 }
 .crayons-btn:hover,
 .crayons-btn:focus{
-background-color: var(--dark-blue);
-border-color: var(--dark-blue);
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
 }
 
 .form-btn,
