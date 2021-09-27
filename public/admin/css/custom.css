@@ -3,6 +3,9 @@
 --dark-blue: #015597;
 --dark-color: #212121;
 }
+.content-wrapper {
+    background-color: #f6f6f6;
+}
 /* End of Custom Color */
 
 /* Navbar */
