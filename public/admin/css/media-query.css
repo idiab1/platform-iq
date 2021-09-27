@@ -1,0 +1,98 @@
+/* Extra small devices */
+@media (max-width: 575.98px) {
+	/* Navbar */
+	.navbar .dropdown-menu {
+		min-width: 11rem;
+	}
+	/* End of Navbar */
+	/* Footer */
+	.main-footer p {
+        font-size: 17px;
+		text-align: center;
+	}
+	/* End of Footer */
+
+    /* Data table */
+    .page .card-header {
+        text-align: center;
+    }
+    .page .card-header .title{
+        margin-bottom: .5rem;
+        float: none
+    }
+
+    .page div.dataTables_wrapper div.dataTables_filter label {
+        font-size: 17px;
+    }
+
+    .page table.dataTable{
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .page table.dataTable>thead>tr>th:not(.sorting_disabled),
+    .page table.dataTable>thead>tr>td:not(.sorting_disabled){
+        padding-right: 25px;
+    }
+    .page table.dataTable>tbody>tr.child span.dtr-title {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+
+    table.table-bordered.dataTable tbody td a{
+        text-transform: capitalize;
+    }
+    div.dataTables_wrapper div.dataTables_info {
+        padding-top: 0.5em !important;
+        padding-bottom: 0.5em;
+        font-size: 17px;
+    }
+
+    /* End of Data Table */
+
+
+    /* Components */
+    /* heading */
+    .heading{
+        font-size: 1.2rem !important;
+        margin-bottom: .2rem !important;
+    }
+    /* Breadcrumb */
+
+    .content-header .breadcrumb .breadcrumb-item {
+        font-size: 16px;
+    }
+    .content-header .breadcrumb .breadcrumb-item a{
+        font-size: 18px;
+    }
+
+    /* Button */
+    .page div.dt-buttons {
+        margin-bottom: 1em;
+    }
+    .btn-create{
+        font-size: 16px;
+        padding: 8px;
+    }
+    .btn-create i{
+        font-size: 15px
+    }
+
+    /* End of Components */
+
+
+}
+
+/* Small devices  */
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+/* Medium devices */
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+/* Large devices */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* Extra large devices */
+@media (min-width: 1200px) {
+
+}
