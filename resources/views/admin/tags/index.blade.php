@@ -34,11 +34,11 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h3 class="card-title">List of all tags</h3>
+                        <div class="col-md-6 col-sm-6">
+                            <h3 class="card-title title">List of all tags</h3>
                         </div>
-                        <div class="col-md-6">
-                            <a class="btn btn-create btn-primary float-sm-right" href="{{route('tag.create')}}">
+                        <div class="col-md-6 col-sm-6">
+                            <a class="btn btn-create crayons-btn btn-primary float-sm-right" href="{{route('tag.create')}}">
                                 <i class="fasfa-plus"></i>
                                 Add New Tag
                             </a>

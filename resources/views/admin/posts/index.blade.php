@@ -34,12 +34,12 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h3 class="card-title">List of all posts</h3>
+                        <div class="col-md-6 col-sm-6">
+                            <h3 class="card-title title">List of all posts</h3>
                         </div>
-                        <div class="col-md-6">
-                            <a class="btn btn-create btn-primary float-sm-right" href="{{route('post.create')}}">
-                                <i class="fasfa-plus"></i>
+                        <div class="col-md-6 col-sm-6">
+                            <a class="btn btn-create crayons-btn btn-primary float-sm-right" href="{{route('post.create')}}">
+                                <i class="fas fa-plus"></i>
                                 Add New Post
                             </a>
                         </div>
@@ -77,7 +77,7 @@
                                         </td>
                                         <td>{{$post->user->name}}</td>
                                         <td>
-                                            <a class="btn btn-success" href="{{route('post.edit', ['id' => $post->id])}}">
+                                            <a class="btn btn-success btn-sm btn-edit" href="{{route('post.edit', ['id' => $post->id])}}">
                                                 <i class="fas fa-edit"></i> {{__('Edit')}}
                                             </a>
                                         </td>
@@ -85,7 +85,7 @@
                                             <form action="{{route('post.archive', ['id' => $post->id])}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-info" type="submit">
+                                                <button class="btn btn-info btn-sm btn-archive" type="submit">
                                                     <i class="fas fa-archive"></i> {{__('Archive')}}
                                                 </button>
                                             </form>
@@ -95,7 +95,7 @@
                                             <form action="{{route('post.hdelete', ['id' => $post->id])}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger" type="submit">
+                                                <button class="btn btn-danger btn-sm btn-delete" type="submit">
                                                     <i class="fas fa-trash"></i> {{__('Delete')}}
                                                 </button>
                                             </form>
