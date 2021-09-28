@@ -87,6 +87,9 @@
     .btn-create i{
         font-size: 15px
     }
+    .page .card-body {
+        overflow: hidden;
+    }
 
     /* End of Components */
     /* Form */
