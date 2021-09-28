@@ -2,17 +2,26 @@
 
 {{-- Title --}}
 @section('title')
-    Add new category
+    Edit {{$category->name . "'s"}}
 @endsection
 
 {{-- Page name --}}
 @section('page_name')
-    Add new category
+    Edit {{$category->name . "'s"}}
 @endsection
 
 {{-- Title --}}
 @section('title')
     {{__('Edit')}} {{$category->name . "'s"}}
+@endsection
+
+{{-- Breadcrumb --}}
+@section('breadcrumb')
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{route('categories.index')}}">Categories</a></li>
+        <li class="breadcrumb-item">Edit {{$category->name . "'s"}}<li>
+    </ol>
 @endsection
 
 @section('content')
