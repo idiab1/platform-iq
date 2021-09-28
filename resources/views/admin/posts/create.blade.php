@@ -87,7 +87,7 @@
 
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary" type="submit">{{__('Add')}}</button>
+                                <button class="btn btn-primary crayons-btn form-btn" type="submit">{{__('Add')}}</button>
                             </div>
                         </form>
 

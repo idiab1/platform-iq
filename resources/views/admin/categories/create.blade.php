@@ -23,7 +23,7 @@
 @section('content')
 <div class="row justify-content-center categories-section page">
     <div class="col-md-8">
-        <div class="card form-category">
+        <div class="card form-category card-primary">
             <div class="card-header">{{ __('Create Category') }}</div>
             <form action="{{route('category.store')}}" method="POST">
                 @csrf
@@ -35,7 +35,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">{{__('Add')}}</button>
+                    <button class="btn btn-primary crayons-btn form-btn" type="submit">{{__('Add')}}</button>
                 </div>
             </form>
 

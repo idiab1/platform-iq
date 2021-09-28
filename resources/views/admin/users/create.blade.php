@@ -56,7 +56,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button class="btn btn-primary crayons-btn form-btn" type="submit">Submit</button>
                             </div>
                         </form>
 
