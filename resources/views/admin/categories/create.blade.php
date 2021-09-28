@@ -24,7 +24,9 @@
 <div class="row justify-content-center categories-section page">
     <div class="col-md-8">
         <div class="card form-category card-primary">
-            <div class="card-header">{{ __('Create Category') }}</div>
+            <div class="card-header">
+                <h3 class="card-title form-title">{{ __('Create Category') }}</h3>
+            </div>
             <form action="{{route('category.store')}}" method="POST">
                 @csrf
                 <div class="card-body">
