@@ -60,6 +60,11 @@ color: #fff;
 
 /* End of Sidebar */
 
+/* Page */
+.page{
+    padding: 30px 0;
+}
+/* End of page */
 
 /* footer */
 .main-footer {
@@ -226,9 +231,15 @@ font-size: .95rem;
 	height: calc(2.25rem + 6px);
 	color: #545454;
 }
-.page form input:focus{
+.page form input:focus,
+.page textarea.form-control:focus{
 	border-color: var(--dark-blue);
 }
+.page textarea.form-control{
+    height: 150px;
+}
+
+
 /* End of Form */
 
 
