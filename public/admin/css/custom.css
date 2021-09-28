@@ -238,7 +238,9 @@ font-size: .95rem;
 .page textarea.form-control{
     height: 150px;
 }
-
+.page .form-title{
+    text-transform: capitalize;
+}
 
 /* End of Form */
 
