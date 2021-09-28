@@ -5,6 +5,12 @@
 		min-width: 11rem;
 	}
 	/* End of Navbar */
+
+    /* Page */
+    .page{
+        padding: 20px 0;
+    }
+    /* End of page */
 	/* Footer */
 	.main-footer p {
         font-size: 17px;
@@ -13,6 +19,7 @@
 	/* End of Footer */
 
     /* Data table */
+
     .page .card-header {
         text-align: center;
     }
@@ -57,8 +64,11 @@
         font-size: 1.2rem !important;
         margin-bottom: .2rem !important;
     }
-    /* Breadcrumb */
 
+    /* Breadcrumb */
+    .content-header {
+        padding-bottom: 5px;
+    }
     .content-header .breadcrumb .breadcrumb-item {
         font-size: 16px;
     }
@@ -79,7 +89,24 @@
     }
 
     /* End of Components */
+    /* Form */
+        .input-group-sm>.custom-select,
+        .input-group-sm>.form-control,
+        .input-group-sm>.input-group-append>.btn,
+        .input-group-sm>.input-group-append>.input-group-text,
+        .input-group-sm>.input-group-prepend>.btn,
+        .input-group-sm>.input-group-prepend>.input-group-text {
+            font-size: .95rem;
+        }
+        .page form input{
+            height: calc(2.25rem + 4px);
+        }
 
+        .page textarea.form-control{
+            height: 120px;
+        }
+
+    /* End of Form */
 
 }
 
