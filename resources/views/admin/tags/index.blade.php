@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <a class="btn btn-create crayons-btn btn-primary float-sm-right" href="{{route('tag.create')}}">
-                                <i class="fasfa-plus"></i>
+                                <i class="fas fa-plus"></i>
                                 Add New Tag
                             </a>
                         </div>
