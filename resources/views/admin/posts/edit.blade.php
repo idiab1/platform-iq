@@ -49,7 +49,7 @@
 @section('breadcrumb')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{route('tags.index')}}">Tags</a></li>
+        <li class="breadcrumb-item"><a href="{{route('posts.index')}}">Posts</a></li>
         <li class="breadcrumb-item">Edit {{$post->title . "'s"}}<li>
     </ol>
 @endsection
@@ -128,7 +128,7 @@
 
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary" type="submit">{{__('Edit')}}</button>
+                                <button class="btn btn-primary crayons-btn form-btn" type="submit">{{__('Update')}}</button>
                             </div>
                         </form>
 

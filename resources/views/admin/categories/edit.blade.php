@@ -18,8 +18,10 @@
 @section('content')
 <div class="row justify-content-center categories-section page">
     <div class="col-md-8">
-        <div class="card form-category">
-            <div class="card-header">{{__('Edit')}} {{$category->name . "'s"}}</div>
+        <div class="card form-category card-primary">
+            <div class="card-header">
+                <h3 class="card-title form-title">{{__('Edit')}} {{$category->name . "'s"}}</h3>
+            </div>
             <form action="{{route('category.update', ['id' => $category->id])}}" method="POST">
                 @csrf
                 @method('PUT')
@@ -33,7 +35,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">{{__('Edit')}}</button>
+                    <button class="btn btn-primary crayons-btn form-btn" type="submit">{{__('Update')}}</button>
                 </div>
             </form>
 
