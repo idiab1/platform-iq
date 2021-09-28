@@ -24,10 +24,11 @@
             background-color:var(--dark-blue);
             color: #fff;
         }
-        .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered li{
             color: #000;
             margin-right: 8px;
         }
+
         .select2-container--default.select2-container--focus .select2-selection--multiple,
         .select2-container--default.select2-container--focus .select2-selection--single {
             border-color: var(--dark-blue);

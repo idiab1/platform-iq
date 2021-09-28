@@ -11,10 +11,32 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
     <style>
+        /* Custom Style for select2 plugin */
         .select2-container .select2-selection--single {
             height: auto;
         }
+        .select2-container--default.select2-container--open .select2-selection--single,
+        .select2-container--default .select2-search--dropdown .select2-search__field:focus {
+            border-color: var(--dark-blue);
+        }
+        .select2-container--default .select2-results__option--highlighted[aria-selected],
+        .select2-container--default .select2-results__option--highlighted[aria-selected]:hover{
+            background-color:var(--dark-blue);
+            color: #fff;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered li{
+            color: #000;
+            margin-right: 8px;
+        }
 
+        .select2-container--default.select2-container--focus .select2-selection--multiple,
+        .select2-container--default.select2-container--focus .select2-selection--single {
+            border-color: var(--dark-blue);
+        }
+        .select2-search input {
+            height: auto;
+            color: #545454;
+        }
     </style>
 @endsection
 
