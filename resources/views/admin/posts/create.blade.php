@@ -26,7 +26,7 @@
         }
         .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
             color: #000;
-            margin: 10px 5px;
+            margin-right: 8px;
         }
         .select2-container--default.select2-container--focus .select2-selection--multiple,
         .select2-container--default.select2-container--focus .select2-selection--single {
