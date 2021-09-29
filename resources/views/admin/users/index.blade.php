@@ -54,7 +54,7 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Admin / User</th>
+                                    <th>User</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -110,7 +110,7 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Admin / User</th>
+                                    <th>User</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
