@@ -114,10 +114,227 @@
 }
 
 /* Small devices  */
-@media (min-width: 576px) and (max-width: 767.98px) {  }
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* Navbar */
+    .navbar .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    /* End of Navbar */
+}
 
 /* Medium devices */
-@media (min-width: 768px) and (max-width: 991.98px) {  }
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Navbar */
+    .navbar {
+        padding: .8rem .7rem;
+    }
+    .main-header .nav-link {
+        height: 2.7rem;
+    }
+    .navbar .navbar-nav .nav-link {
+        font-size: 20px;
+    }
+    .navbar-light .btn-navbar, .navbar-light .form-control-navbar {
+        font-size: 1.2rem !important;
+        height: calc(2.25rem + 8px) !important;
+    }
+    .navbar .dropdown-menu {
+        margin-top: 12px;
+    }
+    .navbar .dropdown-menu .dropdown-item {
+        font-size: 22px;
+    }
+    .navbar .dropdown-menu .dropdown-item .profile h5 {
+        font-size: 24px;
+    }
+    .navbar .dropdown-menu .dropdown-item .profile span {
+        font-size: 20px;
+    }
+
+    /* End of Navbar */
+
+    /* Sidebar */
+    .main-sidebar .brand-link {
+        font-size: 1.7rem;
+    }
+    .main-sidebar .user-panel .image img {
+        width: 3rem;
+    }
+    .main-sidebar .user-panel .info{
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .sidebar .form-inline .input-group .form-control-sidebar{
+        font-size: 1.4rem;
+        height: calc(2.25rem + 8px);
+    }
+
+    .nav-sidebar .nav-item>.nav-link {
+        font-size: 21px;
+    }
+
+    /* End of sidebar */
+
+    /* Page */
+    .page{
+        padding: 40px 0;
+    }
+    /* End of page */
+    /* Footer */
+    .main-footer {
+        padding: 1.5rem;
+    }
+    .main-footer p {
+        font-size: 23px;
+        text-align: center;
+    }
+    /* End of Footer */
+
+    /* Data table */
+
+    .page .card-header .title{
+        font-size: 25px;
+    }
+
+    .page div.dataTables_wrapper div.dataTables_filter label {
+        font-size: 20px;
+    }
+    .page div.dataTables_wrapper div.dataTables_filter label input {
+        height: calc(1.8125rem + 15px);
+    }
+    .page table.dataTable{
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .page table.dataTable>thead>tr>th:not(.sorting_disabled),
+    .page table.dataTable>thead>tr>td:not(.sorting_disabled){
+        font-size: 22px;
+    }
+    table.table-bordered.dataTable tbody th,
+    table.table-bordered.dataTable tbody td,
+    table.table-bordered.dataTable tfoot th,
+    table.table-bordered.dataTable tfoot td {
+        font-size: 22px;
+    }
+    .page table.dataTable>tbody>tr.child span.dtr-title {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    table.table-bordered.dataTable tbody td a{
+        text-transform: capitalize;
+    }
+    div.dataTables_wrapper div.dataTables_info {
+        font-size: 19px;
+        padding-top: .5em !important;
+    }
+    .page-item .page-link {
+        font-size: 19px;
+    }
+
+    /* End of Data Table */
+
+
+    /* Components */
+    /* heading */
+    .heading{
+        font-size: 1.85rem !important;
+    }
+
+    /* Breadcrumb */
+
+    .content-header .breadcrumb .breadcrumb-item {
+        font-size: 21px;
+    }
+    .content-header .breadcrumb .breadcrumb-item a{
+        font-size: 22px;
+    }
+
+    /* Button */
+    .page div.dt-buttons {
+        margin-bottom: 1em;
+    }
+    .btn-create{
+        font-size: 22px;
+    }
+    .btn-create i{
+        font-size: 20px
+    }
+    .page .btn-link {
+        font-size: 18px;
+    }
+    .page .btn-outline-dark{
+        font-size: 18px;
+        padding: .28rem;
+    }
+    .page .card-body {
+        overflow: hidden;
+    }
+    .page .btn-secondary{
+        padding: 7px 11px;
+        font-size: 21px;
+    }
+    .page .btn-delete,
+    .page .btn-edit,
+    .page .btn-archive,
+    .page .btn-restore{
+        font-size: 20px;
+    }
+    .page .btn-delete i,
+    .page .btn-edit i,
+    .page .btn-archive i,
+    .page .btn-restore i{
+        font-size: 17px;
+    }
+    .form-btn {
+        padding: 10px 15px;
+        font-size: 1.35rem;
+    }
+
+    /* End of Components */
+
+    /* Card */
+    .page .card-header .form-title {
+        font-size: 1.5rem;
+    }
+
+
+    /* Form */
+    .input-group-sm>.custom-select,
+    .input-group-sm>.form-control,
+    .input-group-sm>.input-group-append>.btn,
+    .input-group-sm>.input-group-append>.input-group-text,
+    .input-group-sm>.input-group-prepend>.btn,
+    .input-group-sm>.input-group-prepend>.input-group-text {
+        font-size: .95rem;
+    }
+    .page form .form-group {
+        margin-bottom: 1.5rem;
+    }
+    .page form input{
+        height: calc(2.25rem + 15px);
+        font-size: 20px;
+    }
+    .page form label:not(.form-check-label):not(.custom-file-label) {
+        font-size: 21px;
+    }
+    .page textarea.form-control {
+        height: 120px;
+        font-size: 20px;
+    }
+    .page form .input-group>.custom-file input{
+
+    }
+
+    .page form .input-group>.custom-file label{
+
+    }
+
+    /* End of Form */
+
+}
 
 /* Large devices */
 @media (min-width: 992px) and (max-width: 1199.98px) {  }
