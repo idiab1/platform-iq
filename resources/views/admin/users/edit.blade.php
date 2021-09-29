@@ -27,7 +27,7 @@
             <div class="users-form">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Edit {{$user->name . "'s"}}</h3>
+                        <h3 class="card-title form-title">Edit {{$user->name . "'s"}}</h3>
                     </div>
                     <!-- /.card-header -->
                         <!-- form start -->
