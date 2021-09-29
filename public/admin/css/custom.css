@@ -225,7 +225,7 @@ table.table-bordered.dataTable tbody td a{
 .input-group-sm>.input-group-append>.input-group-text,
 .input-group-sm>.input-group-prepend>.btn,
 .input-group-sm>.input-group-prepend>.input-group-text {
-font-size: .95rem;
+    font-size: .95rem !important;
 }
 .page form input{
 	height: calc(2.25rem + 6px);
