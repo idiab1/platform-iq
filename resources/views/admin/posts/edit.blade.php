@@ -37,6 +37,21 @@
             height: auto;
             color: #545454;
         }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .select2-container .select2-selection--single {
+                font-size: 20px;
+            }
+            .select2-container--default .select2-results__option {
+                padding: 8px 16px;
+                font-size: 20px;
+            }
+            .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+                margin-right: 10px;
+                font-size: 20px;
+            }
+        }
+
     </style>
 @endsection
 
@@ -62,7 +77,7 @@
             <div class="tags-form">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Edit {{$post->title . "'s"}}</h3>
+                        <h3 class="card-title form-title">Edit {{$post->title . "'s"}}</h3>
                     </div>
                     <!-- /.card-header -->
                         <!-- form start -->

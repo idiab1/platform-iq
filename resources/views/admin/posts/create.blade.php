@@ -38,6 +38,16 @@
             color: #545454;
         }
 
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .select2-container .select2-selection--single {
+                font-size: 20px;
+            }
+            .select2-container--default .select2-results__option {
+                padding: 8px 16px;
+                font-size: 20px;
+            }
+        }
+
     </style>
 @endsection
 
