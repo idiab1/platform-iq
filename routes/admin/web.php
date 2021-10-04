@@ -84,6 +84,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
     // Route of posts restore
     Route::get('posts/restore/{id}', "PostController@restore")->name('post.restore');
 
+    // Contact Routes
+    Route::get('/contacts', "ContactController@index")->name('contact.index');
 
     // -> Route for setting
     Route::resource('setting', "SettingController")->only([
