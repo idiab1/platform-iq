@@ -2,7 +2,7 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('Create New Tag')}}
+    {{__('List of all tags')}}
 @endsection
 
 {{-- Styles --}}
