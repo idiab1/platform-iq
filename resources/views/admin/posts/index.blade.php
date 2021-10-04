@@ -69,7 +69,7 @@
                                     <tr>
                                         <th scope="row">{{$id++}}</th>
                                         <td>
-                                            <a href="{{route('post.show', ['id' => $post->slug])}}">{{$post->title}}</a>
+                                            <a href="{{route('post.show', ['id' => $post->slug])}}" target="_blank">{{$post->title}}</a>
                                         </td>
 
                                         <td>
