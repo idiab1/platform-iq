@@ -46,6 +46,7 @@
 background-color: var(--dark-color);
 }
 
+
 [class*=sidebar-dark] .btn-sidebar,
 [class*=sidebar-dark] .form-control-sidebar {
 background-color: var(--dark-color);
@@ -127,7 +128,10 @@ color: #fff;
 }
 table.table-bordered.dataTable tbody td a{
     text-transform: capitalize;
-    color: #000;
+    color: #015191;
+}
+table.table-bordered.dataTable tbody td a:hover{
+    text-decoration: underline;
 }
 .page-item.active .page-link{
 	background-color: var(--dark-blue);
