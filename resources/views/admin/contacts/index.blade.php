@@ -48,6 +48,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">{{__('User Name')}}</th>
                                 <th scope="col">{{__('Message')}}</th>
+                                <th scope="col">{{__('Delete')}}</th>
                                 <th scope="col">{{__('Show')}}</th>
                             </tr>
                         </thead>
@@ -68,6 +69,16 @@
                                             @endif
                                         </td>
                                         <td>
+                                            <form action="{{route('message.destroy', ['id' => $contact->id])}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger btn-sm btn-delete" type="submit">
+                                                    <i class="fas fa-trash"></i>
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>
                                             <a class="btn btn-success btn-sm btn-show" href="{{route("message.show", ["id" => $contact->id])}}">
                                                 <i class="fas fa-eye"></i>
                                                 Show
@@ -82,6 +93,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">{{__('User Name')}}</th>
                                 <th scope="col">{{__('Message')}}</th>
+                                <th scope="col">{{__('Delete')}}</th>
                                 <th scope="col">{{__('Show')}}</th>
                             </tr>
                         </tfoot>
