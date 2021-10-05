@@ -225,7 +225,40 @@ table.table-bordered.dataTable tbody td a:hover{
 .card-primary:not(.card-outline)>.card-header {
 	background-color: var(--dark-blue);
 }
+.card-message{
+    border-left: 10px solid var(--dark-blue);
+}
 
+.card-message .message {
+
+}
+.card-message .message .message-header{
+    padding-bottom: 10px;
+}
+
+.card-message .message .message-header h5{
+    float: none;
+    text-transform: capitalize;
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+.card-message .message .message-header span{
+    font-size: 16px;
+}
+
+.card-message .message p{
+    color: #585858;
+    position: relative;
+    line-height: 1.6;
+}
+.card-message .message p::before{
+    position: relative;
+    content: '" ';
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    color: var(--dark-blue);
+}
 
 /* End of Components */
 
