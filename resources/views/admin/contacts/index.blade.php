@@ -68,7 +68,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a class="btn btn-success btn-sm btn-show" href="">
+                                            <a class="btn btn-success btn-sm btn-show" href="{{route("message.show", ["id" => $contact->id])}}">
                                                 <i class="fas fa-eye"></i>
                                                 Show
                                             </a>
