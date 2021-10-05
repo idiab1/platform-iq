@@ -87,6 +87,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
     // Contact Routes
     Route::get('/messages', "ContactController@index")->name('messages.index');
     Route::get('/messages/{id}', "ContactController@show")->name('message.show');
+    Route::delete('/messages/{id}', "ContactController@destroy")->name('message.destroy');
 
     // -> Route for setting
     Route::resource('setting', "SettingController")->only([
