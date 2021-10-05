@@ -204,11 +204,18 @@ table.table-bordered.dataTable tbody td a:hover{
     background-color: #65daec;
     border-color: #17a2b8;
 }
+.page .btn-show{
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    color: #fff !important;
+}
 .page .btn-delete,
 .page .btn-edit,
 .page .btn-archive,
-.page .btn-restore{
+.page .btn-restore,
+.page .btn-show{
     color: #000;
+    text-decoration: none !important;
 }
 .page .btn{
     transition-delay: .2s;
