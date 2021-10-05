@@ -498,14 +498,16 @@
     .page .btn-delete,
     .page .btn-edit,
     .page .btn-archive,
-    .page .btn-restore{
+    .page .btn-restore,
+    .page .btn-show{
         font-size: 22px;
     }
     .page .btn-delete i,
     .page .btn-edit i,
     .page .btn-archive i,
-    .page .btn-restore i{
-        font-size: 19px;
+    .page .btn-restore i
+    .page .btn-show i{
+        font-size: 19px !important;
     }
     .form-btn {
         padding: 10px 15px;
