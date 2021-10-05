@@ -229,9 +229,6 @@ table.table-bordered.dataTable tbody td a:hover{
     border-left: 10px solid var(--dark-blue);
 }
 
-.card-message .message {
-
-}
 .card-message .message .message-header{
     padding-bottom: 10px;
 }
