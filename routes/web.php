@@ -54,6 +54,10 @@ Route::get('/posts/restore/{id}', 'PostController@restore')->name('user.posts.re
 // Tags Route
 Route::get('/tags', 'TagController@index')->name('user.tags.home');
 
+// Show Category route
+Route::get('category/{id}', "CategoryControlller@show")->name('user.category.show');
+
+
 // Contacts Route
 Route::resource('contacts', 'ContactController')->only([
     'index', 'store'
