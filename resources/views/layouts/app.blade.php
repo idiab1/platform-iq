@@ -30,6 +30,9 @@
         <!---- Navbar --->
         @include('include.navbar', ['setting' => \App\Setting::first(['web_name'])])
 
+        <!-- Header -->
+        @include('include.header')
+
         <!---- Main Content --->
         <main class="main-content py-4">
             <div class="container-fluid">
