@@ -124,7 +124,7 @@
                         @if ($categories->count() > 0)
                             @foreach ($categories as $category)
                                 <li>
-                                    <a href="#">{{$category->name}}</a>
+                                    <a href="{{route('user.category.show', ['id' => $category->id])}}">{{$category->name}}</a>
                                     <span class="badges badge-secondary">{{$category->posts->count()}}</span>
                                 </li>
                             @endforeach
